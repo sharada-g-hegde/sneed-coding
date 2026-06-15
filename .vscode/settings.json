@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.eol": "\n",
+  "prettier.endOfLine": "lf",
+  "files.autoSave": "onFocusChange",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.classFunctions": ["tv"]
+}

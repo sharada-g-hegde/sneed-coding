@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-teal-700: #475D5B;
+   --color-ivory: #efe6df;
+  }
+
+ 
+@theme inline {
+  --font-sans: var(--font-dm-sans);
+  --font-fraunces: var(--font-fraunces);
+}
