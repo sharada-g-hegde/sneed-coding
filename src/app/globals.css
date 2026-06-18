@@ -4,12 +4,46 @@
   /* Color */
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-teal-700: #475D5B;
-   --color-ivory: #efe6df;
-  }
+  --color-teal-700: #475d5b;
+  --color-ivory: #efe6df;
+  --color-sage: #75827f;
+  --color-gray: #f5f5f5;
+}
 
- 
 @theme inline {
   --font-sans: var(--font-dm-sans);
   --font-fraunces: var(--font-fraunces);
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.peer:checked ~ label .show-plus {
+  display: none;
+}
+.peer:checked ~ label .show-minus {
+  display: inline;
 }

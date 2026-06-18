@@ -9,6 +9,8 @@ const dmSans = DM_Sans({
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
+  weight: ["100", "300", "400", "600"],
+  style: "normal",
   subsets: ["latin"],
 });
 
