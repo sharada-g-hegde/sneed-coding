@@ -167,31 +167,31 @@ import Link from "@/components/elements/link";
 
 const PRODUCTS = [
   {
-    title: "SNEED-JET® Titan 22",
-    youtubeId: "dQw4w9WgXcQ",
+    title: "SNEED-JET® Titan Printer",
+    youtubeId: "LewByX7gX_I",
     description:
-      "See how our continuous inkjet printers keep pace with high-speed can and bottle lines without a single missed code.",
+      "Explore five real-world SNEED-JET® Titan applications, from bright-ink printing to packaging and automated production lines.",
     duration: "2:34",
   },
   {
-    title: "SNEED-JET Titan T6",
-    youtubeId: "dQw4w9WgXcQ",
+    title: "SNEED-JET® Titan — Provincial Spirits",
+    youtubeId: "LewByX7gX_I",
     description:
-      "Flexible film coding that holds up through folding, sealing and packing — even on soft, fast-moving substrates.",
+      "See a SNEED-JET® Titan printer coding kombucha bottles with white ink for high-contrast date and lot codes.",
     duration: "2:34",
   },
   {
-    title: "SNEED-JET® Freedom 41 Printing on Box",
-    youtubeId: "dQw4w9WgXcQ",
+    title: "SNEED-JET® Titan — Fake Meats",
+    youtubeId: "l71-IEzfRNQ",
     description:
-      "Crisp, permanent codes on glass and plastic bottles, calibrated for condensation, curves and cold-chain handling.",
+      "See how Fake Meats integrated the SNEED-JET® Titan into a pouch-filling production line for date coding.",
     duration: "2:34",
   },
   {
-    title: "Box Printing",
-    youtubeId: "dQw4w9WgXcQ",
+    title: "SNEED-JET® Titan — Granola Factory",
+    youtubeId: "l71-IEzfRNQ",
     description:
-      "Large-character carton marking that stays legible through warehouse handling, stacking and outdoor storage.",
+      "Watch a SNEED-JET® Titan integrated with a flow wrapper for clean and precise date-code printing.",
     duration: "2:34",
   },
 ];
@@ -280,21 +280,29 @@ export default function ProductVideoCarousel() {
               const thumbnail = `https://img.youtube.com/vi/${product.youtubeId}/maxresdefault.jpg`;
 
               return (
-                <div
+                <Container
                   key={product.title}
                   onClick={() => setSelectedVideo(product)}
-                  className="group relative h-50 w-[80vw] shrink-0 cursor-pointer snap-start overflow-hidden rounded-[18px] bg-gray-200 xs:w-[280px] sm:h-100 sm:w-75 sm:snap-align-none sm:rounded-[18px] lg:h-135 lg:w-100 lg:rounded-[21px]"
+                  className="group relative h-50 w-[80vw] shrink-0 cursor-pointer snap-start overflow-hidden rounded-[18px] bg-gray-200 xs:w-[280px] sm:h-100 sm:w-75 sm:snap-none lg:h-135 lg:w-100 lg:rounded-[21px]"
                 >
+                  {/* Thumbnail */}
                   <Media
                     src={thumbnail}
                     alt={product.title}
                     fill
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 z-0 h-full w-full object-cover"
                   />
 
-                  <Container className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
+                  {/* Timer */}
+                  <Container className="absolute bottom-4 right-3 z-10  rounded-full bg-[#8E1729] px-2 py-0.5 font-inter text-[14px] font-medium text-white sm:bottom-7 sm:right-5 sm:px-2.5 sm:py-1 lg:text-[12px]">
+                    {product.duration}
+                  </Container>
 
-                  <Container className="absolute left-1/2 top-1/2 flex h-18 w-18 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#24232D] shadow-sm lg:h-15.5 lg:w-[62px]">
+                  {/* Gradient overlay */}
+                  <Container className="pointer-events-none absolute inset-0 z-20 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
+
+                  {/* Play button */}
+                  <Container className="absolute left-1/2 top-1/2 z-30 flex h-18 w-18 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#24232D] shadow-sm lg:h-15.5 lg:w-[62px]">
                     <Play
                       size={40}
                       fill="currentColor"
@@ -310,29 +318,24 @@ export default function ProductVideoCarousel() {
                     />
                   </Container>
 
-                  <Container className="absolute bottom-4 left-4 right-16 z-10 flex-col sm:bottom-7 sm:left-6 sm:right-24">
-                    <span className="block font-outfit text-[18px] font-semibold text-white sm:text-lg lg:text-[21px]">
+                  <Container className="absolute bottom-4 left-4 right-16 z-40 flex-col sm:bottom-7 sm:left-6 sm:right-24">
+                    <Typography className="m-0 font-outfit text-[18px] font-semibold leading-tight text-white sm:text-lg lg:text-[21px]">
                       {product.title}
-                    </span>
+                    </Typography>
 
                     <Container className="hidden max-h-0 overflow-hidden transition-[max-height,margin-top] duration-300 ease-in-out group-hover:mt-1.5 group-hover:max-h-32 sm:block">
-                      <Typography className="m-0 text-[12px] leading-snug text-white/90 lg:text-[14px]">
+                      <Typography className="m-0 text-[12px] lg:leading-6! text-white lg:text-[18px]">
                         {product.description}
                       </Typography>
                     </Container>
                   </Container>
-
-                  <Container className="absolute bottom-4 right-3 rounded-full bg-[#8E1729] px-2 py-0.5 font-inter text-[14px] font-medium text-white lg:text-[10px] sm:bottom-7 sm:right-5 sm:px-2.5 sm:py-1">
-                    {product.duration}
-                  </Container>
-                </div>
+                </Container>
               );
             })}
           </div>
         </Container>
       </section>
 
-      {/* VIDEO POPUP */}
       {selectedVideo && (
         <Container
           className="fixed inset-0 z-9999 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
@@ -354,7 +357,6 @@ export default function ProductVideoCarousel() {
               <X size={22} />
             </button>
 
-            {/* Click this area to go to YouTube */}
             <Link
               variant="Link"
               href={`https://www.youtube.com/watch?v=${selectedVideo.youtubeId}`}
@@ -369,10 +371,8 @@ export default function ProductVideoCarousel() {
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
-              {/* Dark overlay */}
               <Container className="absolute inset-0 bg-black/20 transition group-hover:bg-black/40" />
 
-              {/* YouTube play button */}
               <Container className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#ff0033] text-white shadow-xl transition-transform duration-200 group-hover:scale-110">
                 <Play
                   size={38}
@@ -382,7 +382,6 @@ export default function ProductVideoCarousel() {
                 />
               </Container>
 
-              {/* Watch on YouTube */}
               <Container className="absolute lg:bottom-6 bottom-2 lg:right-6 right-2! rounded-2xl bg-black/50 px-2 py-2 lg:px-5 lg:py-4 text-[12px] lg:text-sm font-medium text-white backdrop-blur-sm">
                 Watch on YouTube
               </Container>
