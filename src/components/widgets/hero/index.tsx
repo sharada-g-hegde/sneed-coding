@@ -87,7 +87,7 @@ export default function IndustrialPrinterHero() {
       <Container className="flex w-full 2xl:max-w-360 max-lg:h-screen lg:p-2">
         <Container
           width="fullWidth"
-          className="relative h-screen lg:h-[750px] overflow-hidden"
+          className="relative h-screen lg:h-187.5 overflow-hidden"
         >
           <Media
             alt="Hero Image"
@@ -130,7 +130,7 @@ export default function IndustrialPrinterHero() {
           <Link
             href="/"
             variant="Link"
-            className="flex w-full items-center gap-2 sm:w-auto 3xl:py-8.75 font-outfit bg-red-800 3xl:min-w-122.5 absolute right-0 bottom-0 z-10 cursor-pointer rounded-2xl px-4 py-6 text-center leading-9 font-semibold text-white transition-colors duration-200 max-lg:hidden lg:rounded-4xl lg:px-4.5 lg:py-7.75 xl:px-9.5 xl:py-6.5 xl:leading-11 2xl:rounded-[40px] 2xl:px-14.75"
+            className="flex w-full items-center gap-2 sm:w-auto 3xl:py-8.75 font-outfit bg-red-800 3xl:min-w-122.5 absolute right-0 bottom-0 z-10 cursor-pointer rounded-2xl px-4 py-6 text-center leading-9 hover:bg-red-950 font-semibold text-white transition-colors duration-200 max-lg:hidden lg:rounded-4xl lg:px-4.5 lg:py-7.75 xl:px-9.5 xl:py-6.5 xl:leading-11 2xl:rounded-[40px] 2xl:px-14.75"
           >
             <Typography className="font-outfit text-white lg:text-[19px] xl:text-[40px] 2xl:text-[36px] text-[28px]">
               {" "}

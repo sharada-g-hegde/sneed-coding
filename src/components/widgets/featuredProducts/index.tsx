@@ -574,7 +574,7 @@ function ProductCard({ product }: { product: Product }) {
 
           <Link
             href={product.href}
-            className="flex items-center gap-1 font-outfit rounded-full bg-red-800 px-3.75 py-1.25 lg:px-3.75 lg:py-1.25 text-[14px] font-semibold text-white transition-colors duration-200 hover:bg-red-600"
+            className="flex items-center gap-1 font-outfit rounded-full bg-red-800 px-3.75 py-1.25 lg:px-3.75 lg:py-1.25 text-[14px] font-semibold text-white transition-colors duration-200 hover:bg-red-950"
           >
             View
             <svg
@@ -638,10 +638,10 @@ export default function FeaturedProducts() {
                 key={category.id}
                 type="button"
                 onClick={() => setActiveCategory(category.id)}
-                className={`font-outfit shrink-0 snap-start whitespace-nowrap rounded-full border px-4 py-2 text-[14px] font-semibold transition-colors duration-200 sm:px-5 sm:py-2.5 sm:text-[15px] lg:px-8 lg:py-3 lg:text-[16px] ${
+                className={`font-outfit shrink-0 snap-start cursor-pointer whitespace-nowrap rounded-full border px-4 py-2 text-[14px] font-semibold transition-colors duration-200 sm:px-5 sm:py-2.5 sm:text-[15px] lg:px-8 lg:py-3 lg:text-[16px] ${
                   isActive
                     ? "border-red-800 bg-red-800 text-white"
-                    : "border-red-800 bg-white text-red-800 hover:bg-red-50"
+                    : "border-red-800 bg-white text-red-800 "
                 }`}
               >
                 {category.label}

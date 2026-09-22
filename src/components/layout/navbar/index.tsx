@@ -499,7 +499,7 @@ export default function Navbar() {
 
                     <Container
                       className={cn(
-                        "flex w-auto absolute left-full top-0",
+                        "flex w-auto absolute left-58.25 top-0",
                         "invisible opacity-0 pointer-events-none transition-opacity duration-150",
                         "group-hover/item:visible group-hover/item:opacity-100 group-hover/item:pointer-events-auto",
                         "group-focus-within/item:visible group-focus-within/item:opacity-100 group-focus-within/item:pointer-events-auto",
@@ -578,7 +578,7 @@ export default function Navbar() {
 
                     <Container
                       className={cn(
-                        "flex w-auto absolute left-full top-0",
+                        "flex w-auto absolute left-58.25 top-0",
                         "invisible opacity-0 pointer-events-none transition-opacity duration-150",
                         "group-hover/item:visible group-hover/item:opacity-100 group-hover/item:pointer-events-auto",
                         "group-focus-within/item:visible group-focus-within/item:opacity-100 group-focus-within/item:pointer-events-auto",
@@ -657,7 +657,7 @@ export default function Navbar() {
 
                     <Container
                       className={cn(
-                        "flex w-auto absolute left-full top-0",
+                        "flex w-auto absolute left-58.25 top-0",
                         "invisible opacity-0 pointer-events-none transition-opacity duration-150",
                         "group-hover/item:visible group-hover/item:opacity-100 group-hover/item:pointer-events-auto",
                         "group-focus-within/item:visible group-focus-within/item:opacity-100 group-focus-within/item:pointer-events-auto",
@@ -736,7 +736,7 @@ export default function Navbar() {
 
                     <Container
                       className={cn(
-                        "flex w-auto absolute left-full top-0",
+                        "flex w-auto absolute left-58.25 top-0",
                         "invisible opacity-0 pointer-events-none transition-opacity duration-150",
                         "group-hover/item:visible group-hover/item:opacity-100 group-hover/item:pointer-events-auto",
                         "group-focus-within/item:visible group-focus-within/item:opacity-100 group-focus-within/item:pointer-events-auto",
@@ -815,7 +815,7 @@ export default function Navbar() {
 
                     <Container
                       className={cn(
-                        "flex w-auto absolute left-full top-0",
+                        "flex w-auto absolute left-58.25 top-0",
                         "invisible opacity-0 pointer-events-none transition-opacity duration-150",
                         "group-hover/item:visible group-hover/item:opacity-100 group-hover/item:pointer-events-auto",
                         "group-focus-within/item:visible group-focus-within/item:opacity-100 group-focus-within/item:pointer-events-auto",
@@ -1384,7 +1384,7 @@ export default function Navbar() {
           <Link
             href="/"
             variant="Link"
-            className="flex w-full cursor-pointer items-center gap-2 sm:w-auto bg-[#4E0F13] px-6 py-3 rounded-4xl text-[1rem] leading-6 font-outfit font-semibold text-white active:text-brand-200 hover:bg-brand-700"
+            className="flex w-full cursor-pointer items-center gap-2 sm:w-auto bg-[#9A1A1C] px-6 py-3 rounded-4xl text-[1rem] leading-6 font-outfit font-semibold text-white active:text-brand-200 hover:bg-brand-700"
           >
             <span className="inline-block w-full text-center">Shop</span>
           </Link>

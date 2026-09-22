@@ -45,7 +45,7 @@ export default function Poster() {
               inline-flex w-fit font-outfit items-center justify-center rounded-full
               bg-white px-6 py-3 text-base font-bold text-[#7a1a1a]
               transition-transform duration-150 ease-out
-              hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.25)]
+              hover:bg-red-50 cursor-pointer
             "
           >
             Start the product finder
