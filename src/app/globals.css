@@ -11,8 +11,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-dm-sans);
-  --font-fraunces: var(--font-fraunces);
+  --font-inter: var(--font-inter);
+  --font-outfit: var(--font-outfit);
 }
 
 .marquee {
