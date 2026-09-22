@@ -131,7 +131,7 @@ function IndustryCard({ item }: { item: Industry }) {
             hovered ? "mt-1.5 max-h-32 opacity-100" : "mt-0 max-h-0 opacity-0",
           )}
         >
-          <Typography className="m-0 font-inter lg:leading-7! text-white/90 lg:text-[16px]">
+          <Typography className="m-0 font-inter hidden lg:flex lg:leading-7! text-white/90 lg:text-[16px]">
             {item.description}
           </Typography>
         </Container>
