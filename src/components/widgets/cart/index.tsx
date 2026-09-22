@@ -275,16 +275,14 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
                     aria-checked={specialInstructions}
                     onClick={() => setSpecialInstructions((prev) => !prev)}
                     className={cn(
-                      "relative h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200",
-                      specialInstructions ? "bg-[#9B1B32]" : "bg-[#E7E7EA]",
+                      "relative h-6 w-11 shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#9B1B32]/20",
+                      specialInstructions ? "bg-[#9B1B32]" : "bg-[#D9D9DE]",
                     )}
                   >
                     <span
                       className={cn(
-                        "absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-200",
-                        specialInstructions
-                          ? "translate-x-5.5"
-                          : "translate-x-0.5",
+                        "block h-5 w-5 rounded-full bg-white shadow-[0_1px_3px_rgba(0,0,0,0.2)] transition-transform duration-200 ease-in-out",
+                        specialInstructions ? "translate-x-5" : "translate-x-0",
                       )}
                     />
                   </button>
