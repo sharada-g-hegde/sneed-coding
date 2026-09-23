@@ -608,26 +608,89 @@ export default function ProductListingPage() {
   }, [selected]);
 
   // Filtering: a product must match every group that has an active selection
+  // const filteredProducts = useMemo(() => {
+  //   return PRODUCTS.filter((product) => {
+  //     return Object.entries(selected).every(([groupId, options]) => {
+  //       if (!options.length) return true;
+  //       const productValues =
+  //         groupId === "industry"
+  //           ? product.industry
+  //           : groupId === "substrate"
+  //             ? product.substrate
+  //             : groupId === "application"
+  //               ? product.application
+  //               : [];
+  //       return options.some((opt) => productValues.includes(opt));
+  //     });
+  //   }).filter((product) =>
+  //     search.trim()
+  //       ? product.name.toLowerCase().includes(search.trim().toLowerCase())
+  //       : true,
+  //   );
+  // }, [selected, search]);
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter((product) => {
-      return Object.entries(selected).every(([groupId, options]) => {
-        if (!options.length) return true;
-        const productValues =
-          groupId === "industry"
-            ? product.industry
-            : groupId === "substrate"
-              ? product.substrate
-              : groupId === "application"
-                ? product.application
-                : [];
-        return options.some((opt) => productValues.includes(opt));
-      });
-    }).filter((product) =>
-      search.trim()
-        ? product.name.toLowerCase().includes(search.trim().toLowerCase())
-        : true,
-    );
-  }, [selected, search]);
+    const normalizedSearch = search.trim().toLowerCase();
+
+    const result = PRODUCTS.filter((product) => {
+      // Search filter
+      if (
+        normalizedSearch &&
+        !product.name.toLowerCase().includes(normalizedSearch)
+      ) {
+        return false;
+      }
+
+      // Industry filter
+      const selectedIndustries = selected.industry ?? [];
+
+      if (
+        selectedIndustries.length > 0 &&
+        !selectedIndustries.some((value) => product.industry.includes(value))
+      ) {
+        return false;
+      }
+
+      // Substrate / Material filter
+      const selectedSubstrates = selected.substrate ?? [];
+
+      if (
+        selectedSubstrates.length > 0 &&
+        !selectedSubstrates.some((value) => product.substrate.includes(value))
+      ) {
+        return false;
+      }
+
+      // Application filter
+      const selectedApplications = selected.application ?? [];
+
+      if (
+        selectedApplications.length > 0 &&
+        !selectedApplications.some((value) =>
+          product.application.includes(value),
+        )
+      ) {
+        return false;
+      }
+
+      return true;
+    });
+
+    // Sort AFTER filtering
+    switch (sort) {
+      case "Price: Low to High":
+        return [...result].sort((a, b) => a.price - b.price);
+
+      case "Price: High to Low":
+        return [...result].sort((a, b) => b.price - a.price);
+
+      case "Best Rated":
+        return [...result].sort((a, b) => b.rating - a.rating);
+
+      case "Relevance":
+      default:
+        return result;
+    }
+  }, [selected, search, sort]);
 
   const totalPages = Math.max(
     1,
