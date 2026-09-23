@@ -94,7 +94,7 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
 
           open ? "translate-y-0" : "translate-y-full",
 
-          "lg:inset-y-0 lg:right-0 lg:left-auto lg:bottom-auto lg:h-full lg:max-h-none lg:w-[420px] lg:rounded-t-none lg:shadow-2xl",
+          "lg:inset-y-0 lg:right-0 lg:left-auto lg:bottom-auto lg:h-full lg:max-h-none lg:w-105 lg:rounded-t-none lg:shadow-2xl",
 
           open ? "lg:translate-x-0" : "lg:translate-x-full",
         )}

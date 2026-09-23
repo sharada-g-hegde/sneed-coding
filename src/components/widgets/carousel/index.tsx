@@ -59,7 +59,6 @@ export default function ProductVideoCarousel() {
     });
   };
 
-  // Close popup with Escape
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -127,7 +126,6 @@ export default function ProductVideoCarousel() {
                   onClick={() => setSelectedVideo(product)}
                   className="group relative h-50 w-[80vw] shrink-0 cursor-pointer snap-start overflow-hidden rounded-[18px] bg-gray-200 xs:w-[280px] sm:h-100 sm:w-75 sm:snap-none lg:h-135 lg:w-100 lg:rounded-[21px]"
                 >
-                  {/* Thumbnail */}
                   <Media
                     src={thumbnail}
                     alt={product.title}
@@ -135,15 +133,12 @@ export default function ProductVideoCarousel() {
                     className="absolute inset-0 z-0 h-full w-full object-cover"
                   />
 
-                  {/* Timer */}
                   <Container className="absolute bottom-4 right-3 z-10  rounded-full bg-[#8E1729] px-2 py-0.5 font-inter text-[14px] font-medium text-white sm:bottom-7 sm:right-5 sm:px-2.5 sm:py-1 lg:text-[12px]">
                     {product.duration}
                   </Container>
 
-                  {/* Gradient overlay */}
                   <Container className="pointer-events-none absolute inset-0 z-20 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
 
-                  {/* Play button */}
                   <Container className="absolute left-1/2 top-1/2 z-30 flex h-18 w-18 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#24232D] shadow-sm lg:h-15.5 lg:w-[62px]">
                     <Play
                       size={40}
@@ -189,7 +184,6 @@ export default function ProductVideoCarousel() {
               e.stopPropagation()
             }
           >
-            {/* Close button */}
             <button
               type="button"
               onClick={() => setSelectedVideo(null)}

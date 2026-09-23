@@ -107,7 +107,7 @@ const PRODUCTS: Product[] = [
     description: "High-speed inkjet for cases, cartons, and pallets.",
     tags: ["Aluminum", "Date Coding", "70 m/min"],
     price: 3295,
-    industry: ["Food & Beverage", "Industrial Manufacturing"],
+    industry: ["Food & Beverage", "Industrial Manufacturing", "Glass", "Wood"],
     substrate: ["Aluminum", "Corrugated"],
     application: ["Date Coding", "Lot Coding"],
     href: "/",
@@ -139,7 +139,7 @@ const PRODUCTS: Product[] = [
     tags: ["Aluminum", "Date Coding", "70 m/min"],
     price: 4895,
     originalPrice: 5495,
-    industry: ["Cosmetics", "Pharmaceutical"],
+    industry: ["Cosmetics", "Pharmaceutical", "Date Coding"],
     substrate: ["Aluminum", "Glass"],
     application: ["Barcode Printing", "Serialization"],
     href: "/",
@@ -362,7 +362,7 @@ function ProductCard({ product }: { product: Product }) {
       width="fullWidth"
       className="relative flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white"
     >
-      <Container width="fullWidth" className="relative aspect-4/3 bg-gray-100">
+      <Container width="fullWidth" className="relative aspect-4/3  bg-gray-100">
         {product.recommended && (
           <span className="absolute left-3 top-3 z-10 rounded-full bg-red-800 px-3 py-1 text-xs font-semibold text-white">
             Recommended
@@ -571,18 +571,14 @@ export default function ProductListingPage() {
   const [bannerDismissed, setBannerDismissed] = useState(false);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState(SORT_OPTIONS[0]);
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(
     Object.fromEntries(FILTER_GROUPS.map((g) => [g.id, !!g.defaultOpen])),
   );
 
-  const [selected, setSelected] = useState<Record<string, string[]>>({
-    industry: ["Food & Beverage"],
-    substrate: ["Aluminum"],
-    application: ["Date Coding"],
-  });
+  const [selected, setSelected] = useState<Record<string, string[]>>({});
 
   const toggleGroup = (id: string) => {
     setOpenGroups((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -653,10 +649,13 @@ export default function ProductListingPage() {
     <>
       <Navbar />
       <Container
-        component="main"
-        className="flex-col bg-white px-4 py-16 lg:px-16 lg:py-32.5"
+        width="fullWidth"
+        className="flex-col bg-white px-4 items-center justify-center py-16 lg:px-6 xl:px-16 2xl:px-150 3xl:px-160 lg:py-32.5"
       >
-        <Container width="fullWidth" className="mx-auto max-w-350 flex-col">
+        <Container
+          width="pageWidth"
+          className="justify-center max-w-360 flex-col"
+        >
           <Container className="items-center font-inter gap-1 text-[14px]">
             <Link
               href="/"
@@ -899,7 +898,7 @@ export default function ProductListingPage() {
               ) : (
                 <Container
                   width="fullWidth"
-                  className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3"
+                  className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-2  xl:grid-cols-3"
                 >
                   {paginatedProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />

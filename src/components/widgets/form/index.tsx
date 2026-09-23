@@ -13,25 +13,32 @@ export default function LetsMeetForm() {
   };
 
   return (
-    <Container width="fullWidth" className="flex-col px-4 py-6 lg:hidden">
+    <Container
+      width="fullWidth"
+      className="flex-col px-4 py-6 items-center justify-center"
+    >
       <Container
-        className="relative flex-col overflow-hidden rounded-[28px] px-6 py-9"
+        width="pageWidth"
+        className="relative flex-col overflow-hidden justify-center items-center rounded-[28px] px-6 py-9 lg:py-12"
         style={{
           backgroundImage:
             "repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 6px), radial-gradient(120% 80% at 50% 0%, #E85D2C 0%, #B22A1F 35%, #4A0F0C 70%, #0A0505 100%)",
         }}
       >
-        <Typography className="m-0 text-center font-outfit text-[32px] font-bold leading-tight text-white">
+        <Typography className="m-0 text-center font-outfit text-[32px] font-bold lg:text-[56px] leading-tight text-white">
           Let&apos;s meet!
         </Typography>
 
-        <Typography className="mx-auto mt-3 font-inter max-w-87.5 text-center text-[12px] leading-snug text-white/85">
+        <Typography className="mx-auto mt-3 lg:mt-5 font-inter max-w-87.5 lg:max-w-130 text-center tracking-[0.5px] text-[12px]lg:text-[14px] leading-snug lg:leading-6 text-white/85">
           Prefer to schedule a specific day and time for a call back? Take
           advantage of our integrated calendar above, where you can conveniently
           schedule a virtual consultation with one of our representatives.
         </Typography>
 
-        <form onSubmit={handleSubmit} className="mt-6 mx-auto flex-col gap-3">
+        <form
+          onSubmit={handleSubmit}
+          className="mt-6 lg:mt-12 flex-col flex lg:flex-row gap-3"
+        >
           <input
             type="email"
             value={email}
@@ -43,7 +50,7 @@ export default function LetsMeetForm() {
 
           <button
             type="submit"
-            className="font-outfit w-full mt-4 cursor-pointer rounded-full bg-[#9B1B32] py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#7f1628]"
+            className="font-outfit w-full lg:max-w-25 cursor-pointer rounded-full bg-[#9B1B32] py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#7f1628]"
           >
             Submit
           </button>

@@ -195,7 +195,7 @@ export default function SeriesLineup() {
 
           <Container
             width="fullWidth"
-            className="relative h-105 min-w-0 overflow-hidden rounded-[28px] bg-gray-200 lg:h-188 xl:h-178.5"
+            className="relative h-105 min-w-0 overflow-hidden rounded-[28px] bg-gray-200 lg:h-185 xl:h-178.5"
           >
             <Media
               src={displayed.image}

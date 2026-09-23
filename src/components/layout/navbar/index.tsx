@@ -385,7 +385,7 @@ export default function Navbar() {
       width="fullWidth"
       className="fixed left-0 top-0 right-0 justify-center z-50 transition-all duration-300 ease-in-out max-lg:bg-white"
     >
-      <Container className="flex 3xl:max-w-[120rem] w-full 2xl:max-w-360 lg:px-6 xl:px-16 py-1.25 sm:py-2 lg:py-6 flex-col lg:flex-row lg:items-center justify-between lg:gap-1">
+      <Container className="flex 3xl:max-w-[120rem] w-full 2xl:max-w-360 lg:px-6 xl:px-16 2xl:px-6 py-1.25 sm:py-2 lg:py-6 flex-col lg:flex-row lg:items-center justify-between lg:gap-1">
         <Container className="flex items-center w-full max-lg:px-4">
           <Link
             href="/"
