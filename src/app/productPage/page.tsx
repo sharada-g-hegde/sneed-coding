@@ -650,7 +650,7 @@ export default function ProductListingPage() {
       <Navbar />
       <Container
         width="fullWidth"
-        className="flex-col bg-white px-4 items-center justify-center py-16 lg:px-6 xl:px-16 2xl:px-150 3xl:px-160 lg:py-32.5"
+        className="flex-col bg-white px-4 items-center justify-center py-16 lg:px-6 xl:px-16 2xl:px-16 3xl:px-160 lg:py-32.5"
       >
         <Container
           width="pageWidth"
