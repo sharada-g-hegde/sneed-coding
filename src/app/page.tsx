@@ -10,6 +10,8 @@ import LetsMeetForm from "@/components/widgets/form";
 import Gallery from "@/components/widgets/gallery";
 
 import Hero from "@/components/widgets/hero";
+import HeroVedioCarousel from "@/components/widgets/hero-carousel";
+import Homefaq from "@/components/widgets/home-faq";
 import IndustriesSection from "@/components/widgets/industries";
 import NumbersSection from "@/components/widgets/numberSection";
 import Poster from "@/components/widgets/poster";
@@ -28,15 +30,14 @@ export default function Home() {
       <FeaturedProducts />
       <IndustriesSection />
       {/* <PrinterFitWizard /> */}
-      <ProductVideoCarousel />
+      <HeroVedioCarousel />
       <SeriesLineup />
       <TwoColumnTextSection />
-      <FaqSection />
+      <Homefaq />
       {/* <CustomerReviewsMobile /> */}
       <Poster />
       {/* <BlogsMobile /> */}
       {/* <LetsMeetForm /> */}
-
       <Footer />
     </Container>
   );
