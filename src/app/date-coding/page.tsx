@@ -6,7 +6,6 @@ import Media from "@/components/elements/media";
 import Link from "@/components/elements/link";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import WhatIsDateCoding from "@/components/widgets/date-coding";
 import SubstratesSection from "@/components/widgets/date-coding-grid1";
 import IndustriesSection from "@/components/widgets/date-coding-grid2";
 import DateCodingProducts from "@/components/widgets/data-coding-printers";
@@ -14,6 +13,7 @@ import DateCodingVideoSCarousel from "@/components/widgets/data-coding-carousel"
 import SuccessStories from "@/components/widgets/data-coding-successStory";
 import DateCodingfaq from "@/components/widgets/date-coding-faq";
 import DateCodingGrid from "@/components/widgets/date-coding-grid3";
+import HeadingWithCopy from "@/components/widgets/two-column-text";
 
 export default function DateCodingHero() {
   return (
@@ -63,7 +63,12 @@ export default function DateCodingHero() {
           </Container>
         </Container>
       </Container>
-      <WhatIsDateCoding />
+      <HeadingWithCopy
+        heading="What Is Date Coding?"
+        paragraphs={[
+          "Date coding is the process of printing time-sensitive information - expiration dates, best-by dates, manufacture dates, and sell-by dates - directly onto products or packaging during the production process.\n\nIt is a critical step in manufacturing for regulatory compliance with FDA, USDA, and EU standards. Date codes ensure consumer safety by communicating product freshness, enable accurate inventory rotation (FIFO), and support full supply chain traceability from production through retail.\n\nModern industrial inkjet printers can apply date codes at speeds exceeding 60 meters per minute on virtually any substrate — plastic, glass, metal, or paperboard — without slowing your production line.",
+        ]}
+      />
       <SubstratesSection />
       <IndustriesSection />
       <DateCodingProducts />

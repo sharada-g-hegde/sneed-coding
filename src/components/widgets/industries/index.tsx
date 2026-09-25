@@ -6,47 +6,19 @@ import Container from "@/components/elements/container";
 import Media from "@/components/elements/media";
 import Typography from "@/components/elements/typography";
 
-const INDUSTRIES = [
-  {
-    id: "food-beverage",
-    label: "Food & Beverage",
-    image: "/images/Category_Card.webp",
-    description:
-      "Labels and packaging built to survive ice baths, condensation and cold-chain handling without lifting or fading.",
-  },
-  {
-    id: "pharmaceutical",
-    label: "Pharmaceutical",
-    image: "/images/Category_Card__1_.webp",
-    description:
-      "Tamper-evident, chemical-resistant materials that meet regulatory traceability requirements batch after batch.",
-  },
-  {
-    id: "cosmetics",
-    label: "Cosmetics",
-    image: "/images/Category_Card__2_.webp",
-    description:
-      "Premium finishes and foil detailing that hold up on the shelf and feel right in the hand.",
-  },
-  {
-    id: "industrial",
-    label: "Industrial Manufacturing",
-    image: "/images/Category_Card__3_.webp",
-    description:
-      "Durable identification that withstands heat, oil, abrasion and repeated handling on the floor.",
-  },
-  {
-    id: "consumer-goods",
-    label: "Consumer Goods",
-    image: "/images/Category_Card__4_.webp",
-    description:
-      "Consistent brand color and print quality across every carton, every run, every warehouse.",
-  },
-];
+export interface CategoryCardItem {
+  id: string;
+  label: string;
+  image: string;
+  description: string;
+}
 
-type Industry = (typeof INDUSTRIES)[number];
+interface CategoryGridSectionProps {
+  heading: string;
+  items: CategoryCardItem[];
+}
 
-function IndustryCard({ item }: { item: Industry }) {
+function CategoryCard({ item }: { item: CategoryCardItem }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -63,13 +35,12 @@ function IndustryCard({ item }: { item: Industry }) {
         height={600}
         className="absolute inset-0 h-full w-full object-cover"
       />
-      {/* Static gradient over the image */}
+
       <Container
         width="fullWidth"
         className="pointer-events-none absolute inset-0 z-1 bg-[linear-gradient(180deg,rgba(24,23,29,0)_59.27%,rgba(24,23,29,0.8)_99.87%)]"
       />
 
-      {/* Hover overlay */}
       <Container
         width="fullWidth"
         className={cn(
@@ -140,33 +111,41 @@ function IndustryCard({ item }: { item: Industry }) {
   );
 }
 
-export default function IndustriesSection() {
+export default function CategoryGridSection({
+  heading,
+  items,
+}: CategoryGridSectionProps) {
+  const topRow = items.slice(0, 2);
+  const bottomRow = items.slice(2);
+
   return (
     <Container
       component="section"
-      width="pageWidth"
-      className="flex-col px-4 py-10 lg:px-16"
+      width="fullWidth"
+      className="flex-col items-center"
     >
-      <Typography className="mb-6 font-outfit font-bold leading-tight tracking-tight text-neutral-900 text-[32px] lg:text-[56px]">
-        We fit every line
-      </Typography>
+      <Container width="pageWidth" className="flex-col px-4 py-10 lg:px-16">
+        <Typography className="mb-6 font-outfit font-bold leading-tight tracking-tight text-neutral-900 text-[32px] lg:text-[56px]">
+          {heading}
+        </Typography>
 
-      <Container
-        width="fullWidth"
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2"
-      >
-        {INDUSTRIES.slice(0, 2).map((item) => (
-          <IndustryCard key={item.id} item={item} />
-        ))}
-      </Container>
+        <Container
+          width="fullWidth"
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2"
+        >
+          {topRow.map((item) => (
+            <CategoryCard key={item.id} item={item} />
+          ))}
+        </Container>
 
-      <Container
-        width="fullWidth"
-        className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3"
-      >
-        {INDUSTRIES.slice(2).map((item) => (
-          <IndustryCard key={item.id} item={item} />
-        ))}
+        <Container
+          width="fullWidth"
+          className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3"
+        >
+          {bottomRow.map((item) => (
+            <CategoryCard key={item.id} item={item} />
+          ))}
+        </Container>
       </Container>
     </Container>
   );
