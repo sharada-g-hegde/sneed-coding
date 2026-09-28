@@ -207,7 +207,7 @@ export default function SplitHero() {
     <>
       <Navbar />
       <Container width="fullWidth" className="flex-col items-center">
-        <Container className="3xl:max-w-[120rem] w-full 2xl:max-w-360 grid gap-6 px-4 pt-20 pb-10 md:grid-cols-2 lg:px-16 lg:pt-28 lg:pb-20">
+        <Container className="3xl:max-w-[120rem] w-full 2xl:max-w-360 grid gap-6 px-4 pt-20 pb-8 md:grid-cols-2 lg:px-16 xl:px-16 2xl:px-14 lg:pt-28 lg:pb-20">
           <Container className="flex-col justify-start gap-6 lg:gap-8">
             <Typography className="m-0 font-outfit text-[44px] leading-[1.1] font-semibold tracking-[-1px] text-[#272631] lg:text-[80px] lg:leading-[1.1]">
               From Production Line to Store Shelf, Keep It Simple
@@ -236,7 +236,7 @@ export default function SplitHero() {
             </Container>
           </Container>
 
-          <Container className="relative aspect-2/1 w-full overflow-hidden rounded-3xl bg-neutral-200 md:aspect-auto md:min-h-[320px] lg:min-h-[540px]">
+          <Container className="relative aspect-2/1 w-full overflow-hidden rounded-3xl bg-neutral-200 md:aspect-auto md:min-h-80 lg:min-h-135 xl:min-h-135 2xl:min-h-100">
             <Media
               src="/images/food-hero.webp"
               alt="hero"
