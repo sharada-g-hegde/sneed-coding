@@ -174,10 +174,22 @@ export default function Home() {
       {/* <PrinterFitWizard /> */}
       <HeroVedioCarousel />
       <SeriesLineup />
-      <TwoColumnTextSection />
+      <TwoColumnTextSection
+        heading="Simplifying the processes that keep production moving, so businesses can spend less time managing complexity and more time focused on growth."
+        description="Production equipment should solve problems, not create new ones. That is why we focus on practical coding, marking, packaging, and labeling solutions backed by accessible support and straightforward guidance. Wherever you are in your production journey, we are here to help you operate more efficiently and move forward with confidence."
+        image="/images/two-column-text.webp"
+        imageAlt="Automated marking system printing a batch code on a box"
+        cta={{ label: "Contact us", href: "/contact" }}
+      />
       <Homefaq />
       {/* <CustomerReviewsMobile /> */}
-      <Poster />
+      <Poster
+        image="/images/poster-bg.jpg"
+        eyebrow="Start Today"
+        heading="Ready to stop calling for quotes?"
+        description="Join 5,000+ manufacturers who found their printer online in under 10 minutes. Ships same day from Texas."
+        cta={{ label: "Start the product finder", href: "/find-my-printer" }}
+      />
       {/* <BlogsMobile /> */}
       {/* <LetsMeetForm /> */}
       <Footer />
