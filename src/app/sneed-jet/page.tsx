@@ -2,12 +2,15 @@
 
 import Footer from "@/components/layout/footer";
 import Navbar from "@/components/layout/navbar";
+import ProductVideoCarousel from "@/components/widgets/carousel";
 import DarkSuccessStories from "@/components/widgets/dark-successstory";
 import SuccessStories from "@/components/widgets/data-coding-successStory";
 import FaqSection from "@/components/widgets/faq";
 import FeaturedProducts, {
   Product,
 } from "@/components/widgets/featuredProducts";
+import CustomerReviewsMobile from "@/components/widgets/rating";
+import BentoCardGrid from "@/components/widgets/sneed-bentocard";
 import ProductDetailHero from "@/components/widgets/sneed-jet-hero";
 import PainPointsSection from "@/components/widgets/sneed-painpoint";
 import VideoBenefitsSection from "@/components/widgets/sneed-vedio-grid";
@@ -105,6 +108,36 @@ const GLASS_PRODUCTS: Product[] = [
     href: "/products/case-coder-2",
   },
 ];
+const DATE_CODING_VIDEOS = [
+  {
+    title: "SNEED-JET® Titan Printer",
+    youtubeId: "LewByX7gX_I",
+    description:
+      "Explore five real-world SNEED-JET® Titan applications, from bright-ink printing to packaging and automated production lines.",
+    duration: "2:34",
+  },
+  {
+    title: "SNEED-JET® Titan — Provincial Spirits",
+    youtubeId: "LewByX7gX_I",
+    description:
+      "See a SNEED-JET® Titan printer coding kombucha bottles with white ink for high-contrast date and lot codes.",
+    duration: "2:34",
+  },
+  {
+    title: "SNEED-JET® Titan — Fake Meats",
+    youtubeId: "l71-IEzfRNQ",
+    description:
+      "See how Fake Meats integrated the SNEED-JET® Titan into a pouch-filling production line for date coding.",
+    duration: "2:34",
+  },
+  {
+    title: "SNEED-JET® Titan — Granola Factory",
+    youtubeId: "l71-IEzfRNQ",
+    description:
+      "Watch a SNEED-JET® Titan integrated with a flow wrapper for clean and precise date-code printing.",
+    duration: "2:34",
+  },
+];
 
 export default function SneedJet() {
   return (
@@ -171,6 +204,35 @@ export default function SneedJet() {
         ]}
       />
       <FaqSection heading="Description" faqs={FAQS} />
+      <BentoCardGrid
+        heading="Trusted across these industries"
+        items={[
+          {
+            id: "food-beverage",
+            label: "Food & Beverage",
+            image: "/images/food-hero.webp",
+            description: "Clear, permanent codes on jars, bottles and cartons.",
+          },
+          {
+            id: "consumer-goods",
+            label: "Consumer Goods",
+            image: "/images/food-grid5.webp",
+            description:
+              "Crisp branding and batch codes on boxes and packaging.",
+          },
+          {
+            id: "industrial-manufacturing",
+            label: "Industrial Manufacturing",
+            image: "/images/food-grid6.webp",
+            description: "Durable marking for high-speed production lines.",
+          },
+        ]}
+      />
+      <CustomerReviewsMobile />
+      <ProductVideoCarousel
+        heading="See how it works in action"
+        videos={DATE_CODING_VIDEOS}
+      />
       <DarkSuccessStories bgClassName="bg-red-900" />
       <JobCardsSection
         heading="Built for the jobs you actually run"

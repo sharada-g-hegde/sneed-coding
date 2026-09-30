@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Star,
   Minus,
@@ -76,12 +76,28 @@ export default function ProductDetailHero({
   onAddToCart,
 }: ProductDetailHeroProps) {
   const [activeImage, setActiveImage] = useState(0);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
+  const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const goPrev = () =>
     setActiveImage((i) => (i === 0 ? images.length - 1 : i - 1));
   const goNext = () =>
     setActiveImage((i) => (i === images.length - 1 ? 0 : i + 1));
+
+  // Keep the active thumbnail centered in the strip (scrolls the strip only,
+  // never the page).
+  useEffect(() => {
+    const thumb = thumbRefs.current[activeImage];
+    const strip = thumb?.parentElement;
+    if (!thumb || !strip) return;
+
+    const stripRect = strip.getBoundingClientRect();
+    const thumbRect = thumb.getBoundingClientRect();
+    const offset =
+      thumbRect.left - stripRect.left - (stripRect.width - thumbRect.width) / 2;
+
+    strip.scrollBy({ left: offset, behavior: "smooth" });
+  }, [activeImage]);
 
   return (
     <Container width="fullWidth" className="flex-col items-center">
@@ -107,10 +123,10 @@ export default function ProductDetailHero({
                 <path
                   d="M2.5 6H9.5M6.5 9L9.5 6L6.5 3"
                   stroke="#7D7C82"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </Container>
           ))}
@@ -160,6 +176,9 @@ export default function ProductDetailHero({
                   return (
                     <button
                       key={image + index}
+                      ref={(el) => {
+                        thumbRefs.current[index] = el;
+                      }}
                       type="button"
                       aria-label={`Show image ${index + 1}`}
                       onClick={() => setActiveImage(index)}
@@ -215,8 +234,9 @@ export default function ProductDetailHero({
                 <button
                   type="button"
                   aria-label="Decrease quantity"
-                  onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                  className="flex h-5 w-5 cursor-pointer items-center justify-center text-gray-500 hover:text-[#272631]"
+                  onClick={() => setQuantity((q) => Math.max(0, q - 1))}
+                  disabled={quantity === 0}
+                  className="flex h-5 w-5 cursor-pointer items-center justify-center text-gray-500 hover:text-[#272631] disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <Minus className="h-4 w-4" />
                 </button>
@@ -235,8 +255,9 @@ export default function ProductDetailHero({
 
               <button
                 type="button"
+                disabled={quantity === 0}
                 onClick={() => onAddToCart?.(quantity)}
-                className="flex cursor-pointer items-center gap-2 rounded-full bg-[#770000] px-6 py-3.5 font-outfit text-[16px] font-semibold text-white transition-colors hover:bg-red-950"
+                className="flex cursor-pointer items-center gap-2 rounded-full bg-[#770000] px-6 py-3.5 font-outfit text-[16px] font-semibold text-white transition-colors hover:bg-red-950 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-[#770000]"
               >
                 <ShoppingCart className="h-4.5 w-4.5" />
                 Add to Cart

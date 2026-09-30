@@ -92,12 +92,11 @@ function JobCard({ item }: { item: JobCardItem }) {
         </svg>
       </button>
 
-      {/* Label + description */}
       <Container
         width="fullWidth"
         className="absolute bottom-4 left-4 right-4 z-10 flex-col text-white"
       >
-        <span className="block font-outfit text-[14px] lg:text-[24px] font-semibold">
+        <span className="block font-outfit text-[18px] lg:text-[24px] font-semibold">
           {item.label}
         </span>
 
