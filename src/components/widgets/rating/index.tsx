@@ -254,7 +254,7 @@ export default function CustomerReviews() {
         {/* Button: below the cards on mobile, under the summary on desktop */}
         <Link
           href="/reviews"
-          className="mt-6 w-full cursor-pointer justify-center self-start rounded-full bg-[#9B1B1B] py-3.5 font-outfit text-[15px] font-semibold text-white transition-colors hover:bg-[#7f1616] lg:col-start-1 lg:row-start-2 lg:mt-8 lg:w-fit lg:px-4 lg:py-2.5 lg:text-[11px]"
+          className="mt-10 w-full cursor-pointer justify-center self-start rounded-full bg-[#9B1B1B] py-3.5 font-outfit text-[15px] font-semibold text-white transition-colors hover:bg-[#7f1616] lg:col-start-1 lg:row-start-2 lg:mt-8 lg:w-fit lg:px-4 lg:py-2.5 lg:text-[11px]"
         >
           View all reviews
         </Link>
