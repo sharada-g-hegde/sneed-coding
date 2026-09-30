@@ -702,13 +702,8 @@ export type ProductCategory = {
 type FeaturedProductsProps = {
   heading: string;
   description?: string;
-  /**
-   * Omit this (or pass undefined) to hide the category pills and show
-   * a single flat product grid instead — pass `products` as a plain
-   * array in that case.
-   */
+
   categories?: ProductCategory[];
-  /** Keyed by category id when `categories` is set, otherwise a plain array. */
   products: Record<string, Product[]> | Product[];
   emptyStateText?: string;
 };
@@ -842,7 +837,6 @@ export default function FeaturedProducts({
 
   return (
     <section className="mx-auto w-full max-w-350 overflow-x-hidden px-4 py-10 sm:px-6 md:px-8 lg:px-12 lg:py-24">
-      {/* Heading */}
       <Container
         width="fullWidth"
         className="min-w-0 flex-col gap-3 sm:gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-2"
@@ -857,7 +851,6 @@ export default function FeaturedProducts({
         )}
       </Container>
 
-      {/* Category Pills — only when categories are provided */}
       {hasCategories && (
         <Container width="fullWidth" className="relative mt-6 sm:mt-7 lg:mt-8">
           <Container
@@ -888,7 +881,6 @@ export default function FeaturedProducts({
         </Container>
       )}
 
-      {/* Products */}
       {visibleProducts.length > 0 ? (
         <Container
           width="fullWidth"
@@ -908,66 +900,3 @@ export default function FeaturedProducts({
     </section>
   );
 }
-
-/* ---------------------------------------------------------------
-   Usage — heading, description, and product/category data all
-   change per page. Two modes:
-
-   1) WITH categories (pills shown, click to filter):
-
-   import FeaturedProducts, {
-     type Product,
-     type ProductCategory,
-   } from "@/components/sections/featured-products";
-
-   const CATEGORIES: ProductCategory[] = [
-     { id: "inkjet-coders", label: "Inkjet Coders" },
-     { id: "case-coders", label: "Case Coding Printers" },
-   ];
-
-   const PRODUCTS: Record<string, Product[]> = {
-     "inkjet-coders": [
-       {
-         id: "titan-600",
-         sku: "SNEED-JET",
-         image: "/images/product-1.webp",
-         rating: 4,
-         reviewCount: 32,
-         title: "SNEED-JET® Titan Printer",
-         originalPrice: 155500,
-         price: 136000,
-         href: "/products/titan-600",
-       },
-     ],
-     "case-coders": [],
-   };
-
-   <FeaturedProducts
-     heading="Featured Products"
-     description="Every system shares the same ink chemistry, controller, and service network..."
-     categories={CATEGORIES}
-     products={PRODUCTS}
-   />
-
-   2) WITHOUT categories (flat grid, no pills):
-
-   const PRODUCTS: Product[] = [
-     {
-       id: "titan-600",
-       sku: "SNEED-JET",
-       image: "/images/product-1.webp",
-       rating: 4,
-       reviewCount: 32,
-       title: "SNEED-JET® Titan Printer",
-       originalPrice: 155500,
-       price: 136000,
-       href: "/products/titan-600",
-     },
-   ];
-
-   <FeaturedProducts
-     heading="Best Sellers"
-     description="Our most popular systems, ready to ship this week."
-     products={PRODUCTS}
-   />
----------------------------------------------------------------- */

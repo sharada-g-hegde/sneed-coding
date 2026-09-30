@@ -45,7 +45,6 @@ export default function PainPointsSection({
       <Container
         className={`3xl:max-w-[120rem] w-full 2xl:max-w-360 flex-col gap-8 rounded-3xl px-4 py-10 lg:grid lg:grid-cols-2 lg:gap-10 lg:rounded-4xl lg:px-14 lg:py-16 ${theme.section}`}
       >
-        {/* Heading */}
         <Container className="lg:sticky lg:top-28 lg:self-start">
           <Typography
             className={`m-0 font-outfit whitespace-pre-line text-[32px] leading-tight font-semibold lg:text-[52px] lg:leading-[1.15] ${theme.heading}`}

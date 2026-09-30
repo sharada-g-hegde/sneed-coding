@@ -58,8 +58,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET® Titan 22 Dual Head Inkjet Coder",
-      //   description: "Compact thermal inkjet...",
-      //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 233200,
       originalPrice: 291200,
       href: "/products/freedom-42",
@@ -71,8 +70,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET\u00ae Freedom 44, Four Printhead Case Coder",
-      //   description: "Top-and-bottom case sealing for high-volume lines.",
-      //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 6250,
       originalPrice: 6850,
       href: "/products/freedom-44",
@@ -84,8 +82,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET\u00ae Titan T6 Handheld Printer",
-      //   description: "Top-and-bottom case sealing for high-volume lines.",
-      //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 6250,
       originalPrice: 6850,
       href: "/products/titan-t6",
@@ -100,9 +97,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET\u00ae Titan T6 Handheld Printer",
-      //   description:
-      //     "Supporting description text that provides more context for the card content. Supporting description text that provides more context for the card content.",
-      // //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 299800,
       originalPrice: 349000,
       href: "/products/case-coder-1",
@@ -115,8 +110,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET\u00ae Titan T6 Handheld Printer",
-      //   description:"Supporting description text that provides more context for the card content. Supporting description text that provides more context for the card content.",
-      //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 299999,
       originalPrice: 349999,
       href: "/products/case-coder-2",
@@ -233,7 +227,7 @@ function ProductCard({ product }: { product: Product }) {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_835_1639)">
+              <g clipPath="url(#clip0_835_1639)">
                 <path
                   d="M5.93974 13.78C5.81307 13.78 5.68641 13.7333 5.58641 13.6333C5.39307 13.44 5.39307 13.12 5.58641 12.9267L9.93307 8.58001C10.2531 8.26001 10.2531 7.74001 9.93307 7.42001L5.58641 3.07335C5.39307 2.88001 5.39307 2.56001 5.58641 2.36668C5.77974 2.17335 6.09974 2.17335 6.29307 2.36668L10.6397 6.71335C10.9797 7.05335 11.1731 7.51335 11.1731 8.00001C11.1731 8.48668 10.9864 8.94668 10.6397 9.28668L6.29307 13.6333C6.19307 13.7267 6.06641 13.78 5.93974 13.78Z"
                   fill="white"

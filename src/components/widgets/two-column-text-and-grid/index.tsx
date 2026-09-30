@@ -6,30 +6,27 @@ import Container from "@/components/elements/container";
 import Media from "@/components/elements/media";
 import Typography from "@/components/elements/typography";
 
-export interface BentoCardItem {
+export interface JobCardItem {
   id: string;
   label: string;
   image: string;
   description: string;
 }
 
-interface BentoCardGridProps {
+interface JobCardsSectionProps {
   heading: string;
-  items: BentoCardItem[];
-  /** Which card indexes (0-based) span 2 columns on desktop. Defaults to the 2nd and 3rd cards. */
-  wideIndexes?: number[];
+  items: JobCardItem[];
 }
 
-function BentoCard({ item, wide }: { item: BentoCardItem; wide?: boolean }) {
+function JobCard({ item }: { item: JobCardItem }) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <Container
       width="fullWidth"
       className={cn(
-        "group relative overflow-hidden rounded-3xl bg-neutral-200",
-        "min-h-75 max-h-75 lg:min-h-93 lg:max-h-93",
-        wide && "lg:col-span-2",
+        "group relative overflow-hidden rounded-2xl bg-neutral-200",
+        "h-60 lg:h-75",
       )}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -41,10 +38,14 @@ function BentoCard({ item, wide }: { item: BentoCardItem; wide?: boolean }) {
         height={600}
         className="absolute inset-0 h-full w-full object-cover"
       />
+
+      {/* Static bottom gradient */}
       <Container
         width="fullWidth"
         className="pointer-events-none absolute inset-0 z-1 bg-[linear-gradient(180deg,rgba(24,23,29,0)_59.27%,rgba(24,23,29,0.8)_99.87%)]"
       />
+
+      {/* Hover overlays */}
       <Container
         width="fullWidth"
         className={cn(
@@ -60,12 +61,13 @@ function BentoCard({ item, wide }: { item: BentoCardItem; wide?: boolean }) {
         )}
       />
 
+      {/* Arrow button */}
       <button
         type="button"
         aria-label={`Show ${item.label} details`}
         className={cn(
-          "absolute hidden! lg:flex! right-3.5 top-3.5 z-10",
-          "h-18 w-18 items-center justify-center",
+          "absolute right-3.5 top-3.5 z-10 hidden! lg:flex!",
+          "h-11 w-11 lg:h-16 lg:w-16 items-center justify-center",
           "rounded-full border",
           "transition-all duration-300",
           hovered
@@ -74,8 +76,8 @@ function BentoCard({ item, wide }: { item: BentoCardItem; wide?: boolean }) {
         )}
       >
         <svg
-          width="42"
-          height="42"
+          width="24"
+          height="24"
           viewBox="0 0 42 42"
           fill="none"
           className="transition-colors duration-300"
@@ -90,11 +92,12 @@ function BentoCard({ item, wide }: { item: BentoCardItem; wide?: boolean }) {
         </svg>
       </button>
 
+      {/* Label + description */}
       <Container
         width="fullWidth"
-        className="absolute lg:bottom-10 bottom-4 left-3 right-4.5 lg:px-4 z-10 flex-col text-white"
+        className="absolute bottom-4 left-4 right-4 z-10 flex-col text-white"
       >
-        <span className="block text-[18px] font-outfit font-semibold lg:text-[24px]">
+        <span className="block font-outfit text-[14px] lg:text-[24px] font-semibold">
           {item.label}
         </span>
 
@@ -105,7 +108,7 @@ function BentoCard({ item, wide }: { item: BentoCardItem; wide?: boolean }) {
             hovered ? "mt-1.5 max-h-32 opacity-100" : "mt-0 max-h-0 opacity-0",
           )}
         >
-          <Typography className="m-0 font-inter hidden lg:flex lg:leading-7! text-white/90 lg:text-[16px]">
+          <Typography className="m-0 hidden font-inter text-[14px] text-white/90 lg:flex lg:leading-6!">
             {item.description}
           </Typography>
         </Container>
@@ -114,29 +117,26 @@ function BentoCard({ item, wide }: { item: BentoCardItem; wide?: boolean }) {
   );
 }
 
-export default function BentoCardGrid({
+export default function JobCardsSection({
   heading,
   items,
-  wideIndexes = [1, 2],
-}: BentoCardGridProps) {
-  const wideSet = new Set(wideIndexes);
-
+}: JobCardsSectionProps) {
   return (
     <Container
       width="fullWidth"
-      className="flex-col px-4 py-10 lg:py-20 lg:px-16 items-center"
+      className="flex-col items-center px-4 py-10 lg:px-14 lg:py-20"
     >
-      <Container width="pageWidth" className="flex-col">
-        <Typography className="mb-6 font-outfit font-bold leading-tight tracking-tight text-neutral-900 text-[32px] lg:text-[56px]">
+      <Container
+        width="pageWidth"
+        className="flex-col gap-6 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-4"
+      >
+        <Typography className="font-outfit text-[32px] font-semibold leading-tight tracking-tight text-[#272631] lg:text-[56px]">
           {heading}
         </Typography>
 
-        <Container
-          width="fullWidth"
-          className="grid w-auto grid-cols-1 gap-6 lg:grid-cols-3"
-        >
-          {items.map((item, index) => (
-            <BentoCard key={item.id} item={item} wide={wideSet.has(index)} />
+        <Container width="fullWidth" className="flex-col gap-5">
+          {items.map((item) => (
+            <JobCard key={item.id} item={item} />
           ))}
         </Container>
       </Container>

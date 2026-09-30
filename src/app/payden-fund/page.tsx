@@ -1,0 +1,13 @@
+import Navbar from "@/components/layout/navbar2";
+import AvailableFunds from "@/components/widgets/payden-fund";
+import FundsHero from "@/components/widgets/payden-hero";
+
+export default function PaydenFund() {
+  return (
+    <>
+      <Navbar />
+      <FundsHero />
+      <AvailableFunds />
+    </>
+  );
+}
