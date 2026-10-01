@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Outfit, Albert_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,6 +11,10 @@ const outfit = Outfit({
   variable: "--font-outfit",
   weight: ["100", "300", "400", "600"],
   style: "normal",
+  subsets: ["latin"],
+});
+const albertSans = Albert_Sans({
+  variable: "--font-albertSans",
   subsets: ["latin"],
 });
 
@@ -27,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${outfit.variable} h-full bg-white antialiased`}
+      className={`${inter.variable} ${outfit.variable} ${albertSans.variable} h-full bg-white antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

@@ -9,15 +9,12 @@ import Link from "@/components/elements/link";
 import { cn } from "@/utils";
 
 export interface BenefitVideo {
-  /** Label shown at the bottom-left of the card */
   label: string;
-  /** YouTube video id, e.g. "LewByX7gX_I" */
   youtubeId: string;
 }
 
 interface VideoBenefitsSectionProps {
   heading?: string;
-  /** Designed for 3 videos: 1 large on the left, 2 stacked on the right */
   videos: BenefitVideo[];
 }
 
@@ -72,7 +69,6 @@ export default function VideoBenefitsSection({
 }: VideoBenefitsSectionProps) {
   const [selectedVideo, setSelectedVideo] = useState<BenefitVideo | null>(null);
 
-  // Close on Escape + lock page scroll while the popup is open
   useEffect(() => {
     if (!selectedVideo) return;
 

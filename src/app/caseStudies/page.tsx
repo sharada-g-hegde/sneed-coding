@@ -44,7 +44,6 @@ const TAB_FILTERS: Record<Tab, string[]> = {
   Substrates: ["Paper", "Plastic", "Textile", "Rigid Board", "Glass"],
 };
 
-// Maps each tab to the CaseStudy field it filters against
 const TAB_FIELD: Record<Tab, keyof CaseStudy> = {
   Technologies: "technologies",
   Industries: "industries",

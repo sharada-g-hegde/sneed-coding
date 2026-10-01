@@ -76,8 +76,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 32,
       title: "SNEED-JET® Titan Printer",
-      //   description: "High-speed inkjet for cases, cartons, and pallets.",
-      //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       originalPrice: 155500,
       price: 136000,
       href: "/products/titan-600",
@@ -89,8 +88,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET® Titan 22 Dual Head Inkjet Coder",
-      //   description: "Compact thermal inkjet...",
-      //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 233200,
       originalPrice: 291200,
       href: "/products/freedom-42",
@@ -102,8 +100,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET\u00ae Freedom 44, Four Printhead Case Coder",
-      //   description: "Top-and-bottom case sealing for high-volume lines.",
-      //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 6250,
       originalPrice: 6850,
       href: "/products/freedom-44",
@@ -115,8 +112,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET\u00ae Titan T6 Handheld Printer",
-      //   description: "Top-and-bottom case sealing for high-volume lines.",
-      //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 6250,
       originalPrice: 6850,
       href: "/products/titan-t6",
@@ -131,9 +127,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET\u00ae Titan T6 Handheld Printer",
-      //   description:
-      //     "Supporting description text that provides more context for the card content. Supporting description text that provides more context for the card content.",
-      // //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 299800,
       originalPrice: 349000,
       href: "/products/case-coder-1",
@@ -146,8 +140,7 @@ const PRODUCTS: Record<string, Product[]> = {
       rating: 4,
       reviewCount: 128,
       title: "SNEED-JET\u00ae Titan T6 Handheld Printer",
-      //   description:"Supporting description text that provides more context for the card content. Supporting description text that provides more context for the card content.",
-      //   tags: ["Aluminum", "Date Coding", "70 m/min"],
+
       price: 299999,
       originalPrice: 349999,
       href: "/products/case-coder-2",

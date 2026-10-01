@@ -13,6 +13,7 @@
 @theme inline {
   --font-inter: var(--font-inter);
   --font-outfit: var(--font-outfit);
+  --font-albertSans: var(--font-albertSans);
 }
 
 .marquee {
