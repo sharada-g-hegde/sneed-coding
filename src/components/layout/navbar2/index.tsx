@@ -2,7 +2,7 @@
 
 import Link from "@/components/elements/link";
 import Media from "@/components/elements/media";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
   { label: "About Us", hasMenu: false },
@@ -65,9 +65,16 @@ function Logo() {
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Stop the page from scrolling behind the open mobile menu
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
     <header className="relative w-full font-sans text-white">
-      {/* Top utility bar (desktop only) */}
       <div className="hidden h-12 items-center justify-end gap-10 bg-[#0e2f45] px-[4.5%] lg:flex">
         <button
           type="button"
@@ -88,9 +95,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Main bar */}
       <div className="flex h-16 items-center justify-between bg-[#154362] px-6 lg:h-[76px] lg:px-[4.5%]">
-        {/* Left: logo + links */}
         <div className="flex items-center">
           <Logo />
 
@@ -108,7 +113,6 @@ export default function Navbar() {
           </nav>
         </div>
 
-        {/* Right (desktop): pills */}
         <div className="hidden items-center gap-4 lg:flex">
           <a
             href="#"
@@ -169,13 +173,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu panel */}
+      {/* Mobile menu panel (full screen below the bar) */}
       <div
-        className={`absolute left-0 right-0 top-full z-50 overflow-hidden bg-[#154362] transition-[max-height] duration-300 ease-in-out lg:hidden ${
-          mobileOpen ? "max-h-150" : "max-h-0"
+        className={`absolute left-0 right-0 top-full z-50 overflow-hidden bg-[#154362] transition-[height] duration-300 ease-in-out lg:hidden ${
+          mobileOpen ? "h-[calc(100dvh-4rem)]" : "h-0"
         }`}
       >
-        <div className="flex flex-col border-t border-white/15 px-6 py-4">
+        <div className="flex h-full flex-col overflow-y-auto border-t border-white/15 px-6 py-4">
           {NAV_LINKS.map((link) => (
             <button
               key={link.label}

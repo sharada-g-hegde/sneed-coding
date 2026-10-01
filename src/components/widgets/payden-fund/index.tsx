@@ -353,14 +353,75 @@ function MobileCard({ card }: { card: (typeof MOBILE_CARDS)[number] }) {
   );
 }
 
+/* ---------------- Shared pagination (used above and below) ---------------- */
+function Pagination({
+  page,
+  totalPages,
+  onChange,
+  className = "",
+}: {
+  page: number;
+  totalPages: number;
+  onChange: (p: number) => void;
+  className?: string;
+}) {
+  if (totalPages <= 1) return null;
+
+  const start = Math.max(1, Math.min(page - 2, totalPages - 4));
+  const end = Math.min(totalPages, start + 4);
+  const pages = Array.from({ length: end - start + 1 }, (_, i) => start + i);
+
+  return (
+    <nav
+      aria-label="Pagination"
+      className={`flex items-center justify-center gap-2 font-inter text-[18px] text-[#525159] ${className}`}
+    >
+      {pages.map((p) => (
+        <button
+          key={p}
+          type="button"
+          onClick={() => onChange(p)}
+          aria-current={p === page ? "page" : undefined}
+          className={`flex h-9 min-w-9 cursor-pointer items-center justify-center rounded-full px-2 ${
+            p === page ? "bg-[#e3e8ec] font-medium text-[#272631]" : ""
+          }`}
+        >
+          {p}
+        </button>
+      ))}
+      <button
+        type="button"
+        aria-label="Next page"
+        onClick={() => onChange(Math.min(page + 1, totalPages))}
+        disabled={page === totalPages}
+        className="flex h-9 min-w-9 cursor-pointer items-center justify-center disabled:opacity-40"
+      >
+        &rsaquo;
+      </button>
+      <button
+        type="button"
+        aria-label="Last page"
+        onClick={() => onChange(totalPages)}
+        disabled={page === totalPages}
+        className="flex h-9 min-w-9 cursor-pointer items-center justify-center disabled:opacity-40"
+      >
+        &raquo;
+      </button>
+    </nav>
+  );
+}
+
 export default function AvailableFunds() {
   const [page, setPage] = useState(1);
   const totalPages = Math.ceil(MOBILE_CARDS.length / PAGE_SIZE);
-  const pages = Array.from(
-    { length: Math.min(totalPages, 5) },
-    (_, i) => i + 1,
-  );
   const visible = MOBILE_CARDS.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  const changePage = (p: number) => {
+    setPage(p);
+    document
+      .getElementById("funds-mobile")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <Container
@@ -410,7 +471,7 @@ export default function AvailableFunds() {
         </Container>
       </Container>
 
-      {/* Desktop: accordion list */}
+      {/* Desktop: accordion list (unchanged, no pagination) */}
       <Container
         width="fullWidth"
         className="mt-6 hidden flex-col gap-3.5 lg:flex"
@@ -420,49 +481,28 @@ export default function AvailableFunds() {
         ))}
       </Container>
 
-      {/* Mobile: pagination + cards */}
-      <Container width="fullWidth" className="flex-col px-5 lg:hidden">
-        <nav
-          aria-label="Pagination"
-          className="mb-6 mt-3 flex items-center justify-center gap-2 font-inter text-[18px] text-[#525159]"
-        >
-          {pages.map((p) => (
-            <button
-              key={p}
-              type="button"
-              onClick={() => setPage(p)}
-              aria-current={p === page ? "page" : undefined}
-              className={`flex h-9 min-w-9 cursor-pointer items-center justify-center rounded-full px-2 ${
-                p === page ? "bg-[#e3e8ec] font-medium text-[#272631]" : ""
-              }`}
-            >
-              {p}
-            </button>
-          ))}
-          <button
-            type="button"
-            aria-label="Next page"
-            onClick={() => setPage((p) => Math.min(p + 1, totalPages))}
-            className="flex h-9 min-w-9 cursor-pointer items-center justify-center"
-          >
-            &rsaquo;
-          </button>
-          <button
-            type="button"
-            aria-label="Last page"
-            onClick={() => setPage(totalPages)}
-            className="flex h-9 min-w-9 cursor-pointer items-center justify-center"
-          >
-            &raquo;
-          </button>
-        </nav>
+      {/* Mobile: pagination (top) + cards + pagination (bottom) */}
+      <div id="funds-mobile" className="flex flex-col px-5 lg:hidden">
+        <Pagination
+          page={page}
+          totalPages={totalPages}
+          onChange={changePage}
+          className="mb-6 mt-3"
+        />
 
-        <Container width="fullWidth" className="flex-col gap-6">
+        <div className="flex w-full flex-col gap-6">
           {visible.map((card) => (
             <MobileCard key={`${card.fundName}-${card.ticker}`} card={card} />
           ))}
-        </Container>
-      </Container>
+        </div>
+
+        <Pagination
+          page={page}
+          totalPages={totalPages}
+          onChange={changePage}
+          className="mb-2 mt-8"
+        />
+      </div>
     </Container>
   );
 }
