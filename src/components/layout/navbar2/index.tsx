@@ -1,5 +1,6 @@
 "use client";
 
+import Container from "@/components/elements/container";
 import Link from "@/components/elements/link";
 import Media from "@/components/elements/media";
 import { useEffect, useState } from "react";
@@ -65,17 +66,20 @@ function Logo() {
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Stop the page from scrolling behind the open mobile menu
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
+
     return () => {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
 
   return (
-    <header className="relative w-full font-sans text-white">
-      <div className="hidden h-12 items-center justify-end gap-10 bg-[#0e2f45] px-[4.5%] lg:flex">
+    <Container className="relative flex-col w-full font-sans text-white">
+      <Container
+        width="fullWidth"
+        className="hidden h-12 items-center justify-end gap-10 bg-[#0e2f45] px-[4.5%] lg:flex"
+      >
         <button
           type="button"
           className="flex cursor-pointer items-center gap-1.5 text-[14px] font-semibold"
@@ -83,6 +87,7 @@ export default function Navbar() {
           Location Not Listed
           <Chevron />
         </button>
+
         <button
           type="button"
           className="flex cursor-pointer items-center gap-1.5 text-[14px] font-semibold"
@@ -90,13 +95,17 @@ export default function Navbar() {
           Institutional Investor
           <Chevron />
         </button>
+
         <button type="button" aria-label="Search" className="cursor-pointer">
           <SearchIcon size={22} />
         </button>
-      </div>
+      </Container>
 
-      <div className="flex h-16 items-center justify-between bg-[#154362] px-6 lg:h-[76px] lg:px-[4.5%]">
-        <div className="flex items-center">
+      <Container
+        width="fullWidth"
+        className="h-16 items-center justify-between bg-[#154362] px-6 lg:h-[76px] lg:px-[4.5%]"
+      >
+        <Container className="items-center">
           <Logo />
 
           <nav className="ml-12 hidden items-center gap-12 lg:flex">
@@ -111,25 +120,27 @@ export default function Navbar() {
               </button>
             ))}
           </nav>
-        </div>
+        </Container>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <a
+        <Container className="hidden items-center gap-4 lg:flex">
+          <Link
             href="#"
+            variant="Link"
             className="rounded-full bg-[#2b5a78] px-7 py-2.5 text-[16px] font-semibold transition-colors duration-200 hover:bg-[#356989]"
           >
             Account Access
-          </a>
-          <a
+          </Link>
+
+          <Link
             href="#"
+            variant="Link"
             className="rounded-full bg-[#4a748f] px-7 py-2.5 text-[16px] font-semibold transition-colors duration-200 hover:bg-[#5a84a0]"
           >
             Contact Us
-          </a>
-        </div>
+          </Link>
+        </Container>
 
-        {/* Right (mobile): search + hamburger */}
-        <div className="flex items-center gap-5 lg:hidden">
+        <Container className="items-center gap-5 lg:hidden">
           <button
             type="button"
             aria-label="Search"
@@ -137,6 +148,7 @@ export default function Navbar() {
           >
             <SearchIcon size={26} />
           </button>
+
           <button
             type="button"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -170,16 +182,19 @@ export default function Navbar() {
               </svg>
             )}
           </button>
-        </div>
-      </div>
+        </Container>
+      </Container>
 
-      {/* Mobile menu panel (full screen below the bar) */}
-      <div
-        className={`absolute left-0 right-0 top-full z-50 overflow-hidden bg-[#154362] transition-[height] duration-300 ease-in-out lg:hidden ${
+      <Container
+        width="fullWidth"
+        className={`absolute left-0 right-0 top-full z-50 flex-col overflow-hidden bg-[#154362] transition-[height] duration-300 ease-in-out lg:hidden ${
           mobileOpen ? "h-[calc(100dvh-4rem)]" : "h-0"
         }`}
       >
-        <div className="flex h-full flex-col overflow-y-auto border-t border-white/15 px-6 py-4">
+        <Container
+          width="fullWidth"
+          className="h-full flex-col overflow-y-auto border-t border-white/15 px-6 py-4"
+        >
           {NAV_LINKS.map((link) => (
             <button
               key={link.label}
@@ -191,37 +206,41 @@ export default function Navbar() {
             </button>
           ))}
 
-          <div className="mt-5 flex flex-col gap-3">
-            <a
+          <Container className="mt-5 flex-col gap-3">
+            <Link
               href="#"
+              variant="Link"
               className="rounded-full bg-[#2b5a78] px-6 py-3.5 text-center text-[16px] font-semibold"
             >
               Account Access
-            </a>
-            <a
+            </Link>
+
+            <Link
+              variant="Link"
               href="#"
               className="rounded-full bg-[#4a748f] px-6 py-3.5 text-center text-[16px] font-semibold"
             >
               Contact Us
-            </a>
-          </div>
+            </Link>
+          </Container>
 
-          <div className="mt-5 flex flex-col gap-1 text-[15px] font-semibold text-white/90">
+          <Container className="mt-5 flex-col gap-1 text-[15px] font-semibold text-white/90">
             <button
               type="button"
               className="flex cursor-pointer items-center gap-1.5 py-2"
             >
               Location Not Listed <Chevron />
             </button>
+
             <button
               type="button"
               className="flex cursor-pointer items-center gap-1.5 py-2"
             >
               Institutional Investor <Chevron />
             </button>
-          </div>
-        </div>
-      </div>
-    </header>
+          </Container>
+        </Container>
+      </Container>
+    </Container>
   );
 }

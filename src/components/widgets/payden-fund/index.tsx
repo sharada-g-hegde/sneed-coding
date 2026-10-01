@@ -294,7 +294,6 @@ function FundAccordion({
   );
 }
 
-/* ---------------- Mobile card ---------------- */
 function MobileCard({ card }: { card: (typeof MOBILE_CARDS)[number] }) {
   const rows = [
     ["YTD", card.ytd],
@@ -353,7 +352,6 @@ function MobileCard({ card }: { card: (typeof MOBILE_CARDS)[number] }) {
   );
 }
 
-/* ---------------- Shared pagination (used above and below) ---------------- */
 function Pagination({
   page,
   totalPages,
@@ -446,14 +444,14 @@ export default function AvailableFunds() {
           className="mt-8 items-end justify-between lg:mt-6"
         >
           <Container className="flex-col gap-1.5 font-inter text-[16px] italic leading-7 text-[#617C93] lg:text-[16px] lg:leading-4.5">
-            <p>
+            <Typography>
               Past performance is no guarantee of future results. Please see
               below for important disclosures.
-            </p>
-            <p>
+            </Typography>
+            <Typography>
               Returns less than one year are not annualized. All returns are net
               of fees.
-            </p>
+            </Typography>
           </Container>
 
           <label
@@ -471,7 +469,6 @@ export default function AvailableFunds() {
         </Container>
       </Container>
 
-      {/* Desktop: accordion list (unchanged, no pagination) */}
       <Container
         width="fullWidth"
         className="mt-6 hidden flex-col gap-3.5 lg:flex"
@@ -481,8 +478,11 @@ export default function AvailableFunds() {
         ))}
       </Container>
 
-      {/* Mobile: pagination (top) + cards + pagination (bottom) */}
-      <div id="funds-mobile" className="flex flex-col px-5 lg:hidden">
+      <Container
+        id="funds-mobile"
+        width="fullWidth"
+        className="flex-col px-5 lg:hidden"
+      >
         <Pagination
           page={page}
           totalPages={totalPages}
@@ -490,11 +490,11 @@ export default function AvailableFunds() {
           className="mb-6 mt-3"
         />
 
-        <div className="flex w-full flex-col gap-6">
+        <Container className="flex w-full flex-col gap-6">
           {visible.map((card) => (
             <MobileCard key={`${card.fundName}-${card.ticker}`} card={card} />
           ))}
-        </div>
+        </Container>
 
         <Pagination
           page={page}
@@ -502,7 +502,7 @@ export default function AvailableFunds() {
           onChange={changePage}
           className="mb-2 mt-8"
         />
-      </div>
+      </Container>
     </Container>
   );
 }
