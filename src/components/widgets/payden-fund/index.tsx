@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Container from "@/components/elements/container";
+import Typography from "@/components/elements/typography";
 
 type ShareClass = {
   name: string;
@@ -233,7 +234,7 @@ function FundAccordion({
         htmlFor={inputId}
         className="flex cursor-pointer items-center justify-between px-6 py-5 group-has-checked:text-[#00b6b2]"
       >
-        <span className="font-outfit text-[18px] lg:text-[24px] font-medium text-inherit group-not-has-checked:text-[#272631]">
+        <span className="font-outfit text-[18px] lg:text-[20px] font-medium text-inherit group-not-has-checked:text-[#272631]">
           {fund.name}
         </span>
         <span className="flex items-center gap-2 font-inter text-[12px] lg:text-[14px] font-medium">
@@ -352,7 +353,6 @@ function MobileCard({ card }: { card: (typeof MOBILE_CARDS)[number] }) {
   );
 }
 
-/* ---------------- Section ---------------- */
 export default function AvailableFunds() {
   const [page, setPage] = useState(1);
   const totalPages = Math.ceil(MOBILE_CARDS.length / PAGE_SIZE);
@@ -367,17 +367,15 @@ export default function AvailableFunds() {
       width="fullWidth"
       className="group/all flex-col bg-[#fbfcfe] pb-16 lg:px-16 lg:pb-20"
     >
-      {/* hidden checkbox that opens every accordion */}
       <input id="show-all" type="checkbox" className="peer sr-only" />
 
-      {/* Header */}
       <Container
         width="fullWidth"
         className="flex-col bg-[#f3f6fb] px-5 pb-8 pt-8 lg:bg-transparent lg:px-0 lg:pt-12 lg:pb-0"
       >
-        <h2 className="font-outfit text-[26px] font-medium text-[#272631] lg:text-[32px]">
+        <Typography className="font-outfit text-[26px] font-medium text-[#272631] lg:text-[32px]">
           Available U.S. Funds
-        </h2>
+        </Typography>
         <p className="mt-2 font-inter text-[20px] text-[#6b7480] lg:text-[18px]">
           As of 08/31/2026
         </p>
