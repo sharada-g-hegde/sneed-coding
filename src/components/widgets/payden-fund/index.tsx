@@ -232,7 +232,7 @@ function FundAccordion({
 
       <label
         htmlFor={inputId}
-        className="flex cursor-pointer items-center justify-between px-6 py-5 group-has-checked:text-[#00b6b2]"
+        className="flex cursor-pointer items-center justify-between px-6 py-5 group-has-checked:text-[#00b6b2] 2xl:py-7"
       >
         <span className="font-outfit text-[18px] lg:text-[20px] font-medium text-inherit group-not-has-checked:text-[#272631]">
           {fund.name}
@@ -424,7 +424,7 @@ export default function AvailableFunds() {
   return (
     <Container
       width="fullWidth"
-      className="group/all flex-col bg-[#fbfcfe] pb-16 lg:px-16 lg:pb-20"
+      className="group/all flex-col bg-[#fbfcfe] pb-16 lg:px-16 lg:pb-20 xl:px-[max(4.5vw,calc((100vw_-_1800px)/2))]"
     >
       <input id="show-all" type="checkbox" className="peer sr-only" />
 
@@ -432,18 +432,18 @@ export default function AvailableFunds() {
         width="fullWidth"
         className="flex-col bg-[#f3f6fb] px-5 pb-8 pt-8 lg:bg-transparent lg:px-0 lg:pt-12 lg:pb-0"
       >
-        <Typography className="font-outfit text-[26px] font-medium text-[#272631] lg:text-[32px]">
+        <Typography className="font-outfit text-[26px] font-medium text-[#272631] lg:text-[32px] 2xl:text-[24px]">
           Available U.S. Funds
         </Typography>
-        <p className="mt-2 font-inter text-[20px] text-[#6b7480] lg:text-[18px]">
+        <Typography className="mt-2 font-inter text-[20px] text-[#6b7480] lg:text-[18px] 2xl:text-[16px]">
           As of 08/31/2026
-        </p>
+        </Typography>
 
         <Container
           width="fullWidth"
-          className="mt-8 items-end justify-between lg:mt-6"
+          className="mt-8 items-end justify-between lg:mt-6 2xl:mt-8"
         >
-          <Container className="flex-col gap-1.5 font-inter text-[16px] italic leading-7 text-[#617C93] lg:text-[16px] lg:leading-4.5">
+          <Container className="flex-col gap-1.5 font-inter text-[16px] italic leading-7 text-[#617C93] lg:text-[16px] lg:leading-4.5 2xl:gap-2.5 2xl:text-[13px]">
             <Typography>
               Past performance is no guarantee of future results. Please see
               below for important disclosures.
@@ -471,7 +471,7 @@ export default function AvailableFunds() {
 
       <Container
         width="fullWidth"
-        className="mt-6 hidden flex-col gap-3.5 lg:flex"
+        className="mt-6 hidden flex-col gap-3.5 lg:flex 2xl:mt-9 2xl:gap-4"
       >
         {FUNDS.map((fund, i) => (
           <FundAccordion key={fund.id} fund={fund} defaultOpen={i === 0} />

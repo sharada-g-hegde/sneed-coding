@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/footer2";
 import Navbar from "@/components/layout/navbar2";
 import AvailableFunds from "@/components/widgets/payden-fund";
 import FundsHero from "@/components/widgets/payden-hero";
@@ -8,6 +9,7 @@ export default function PaydenFund() {
       <Navbar />
       <FundsHero />
       <AvailableFunds />
+      <Footer />
     </>
   );
 }
