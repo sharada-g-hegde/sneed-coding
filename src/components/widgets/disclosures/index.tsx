@@ -4,72 +4,14 @@ import Container from "@/components/elements/container";
 import Link from "@/components/elements/link";
 import Typography from "@/components/elements/typography";
 
-function BackToTop() {
-  return (
-    <button
-      type="button"
-      aria-label="Back to top"
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-3 right-3 z-40 flex h-11 w-11 cursor-pointer flex-col items-center justify-center rounded-full bg-[#456b86] text-white shadow-md transition-colors duration-200 hover:bg-[#154362] sm:bottom-4 sm:right-4 md:h-12 md:w-12 xl:bottom-5 xl:right-5"
-    >
-      <svg
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M12 19V5M5 12l7-7 7 7" />
-      </svg>
-
-      <span className="text-[10px] font-bold leading-none">Top</span>
-    </button>
-  );
-}
-
 const linkClass = "text-[#2b6a8a] underline-offset-2 hover:underline";
 
 export default function Disclosures() {
   return (
     <Container className="w-full bg-[#eceff1] text-[#2f3b46]">
       {/* Centered disclosure content */}
-      <Container
-        className="
-          mx-auto
-          flex
-          w-full
-          max-w-[1320px]
-          flex-col
-          px-5
-          py-6
-          sm:px-8
-          md:px-10
-          md:py-8
-          lg:px-12
-          xl:px-0
-          xl:py-10
-        "
-      >
-        <Container
-          className="
-            flex
-            w-full
-            flex-col
-            gap-4
-            text-[12px]
-            italic
-            leading-[1.5]
-            sm:text-[13px]
-            md:text-[14px]
-            xl:gap-5
-            xl:text-[15px]
-            xl:leading-[1.45]
-          "
-        >
+      <Container className="mx-auto flex w-full max-w-[1320px] flex-col px-5 py-6 sm:px-8 md:px-10 md:py-8 lg:px-12 xl:px-0 xl:py-10">
+        <Container className="flex w-full flex-col gap-4 text-[12px] italic leading-[1.5] sm:text-[13px] md:text-[14px] xl:gap-5 xl:text-[15px] xl:leading-[1.45]">
           <Typography className="m-0 font-albertSans text-[14px] font-bold text-[#2F3B47] lg:text-[14px]">
             For mutual fund fees and standardized quarterly performance, please
             click on the fund name.
@@ -201,8 +143,6 @@ export default function Disclosures() {
           </Typography>
         </Container>
       </Container>
-
-      <BackToTop />
     </Container>
   );
 }
