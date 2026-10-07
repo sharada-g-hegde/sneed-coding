@@ -74,18 +74,16 @@ export default function Disclosures() {
             For mutual fund fees and standardized quarterly performance, please
             click on the fund name.
           </Typography>
-
-          <Typography className="m-0 mt-2 font-albertSans text-[14px] lg:mt-3 lg:text-[14px]">
+          <Typography className="m-0 mt-2 block font-albertSans text-[14px] leading-[1.6] lg:mt-3 lg:text-[14px]">
             For more information and to obtain a prospectus or summary
             prospectus, please{" "}
-            <Link href="#" variant="Link" className={linkClass}>
+            <Link href="#" variant="Link" className={`${linkClass} !inline`}>
               click here
             </Link>
             . Before investing, investors should carefully read and consider
             investment objectives, risks, charges, expenses, and other important
             information about the Fund, which is contained in these documents.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Quoted performance data represent past performance, which does not
             guarantee future results. Investment returns and principal value
@@ -93,25 +91,21 @@ export default function Disclosures() {
             more or less than their original cost. The Payden Funds are
             distributed through Payden &amp; Rygel Distributors, member FINRA.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] font-bold text-[#2F3B47] lg:text-[14px]">
             General Risk Disclosures:
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Investment in foreign securities entails certain risks from
             investing in domestic securities, including changes in exchange
             rates, political changes, differences in reporting standards, and,
             for emerging-market securities, higher volatility.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Investment in high-yield securities entails certain risks from
             investing in investment-grade securities, including higher
             volatility, greater credit risk, and the issues&apos; more
             speculative nature.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Investment in equity securities poses certain risks, including a
             sudden decline in a holding&apos;s share price or an overall decline
@@ -125,7 +119,6 @@ export default function Disclosures() {
             instead of improve, or the pace and extent of any improvement may be
             less than expected.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Interest Rate Risk: As with most funds that invest in debt
             securities, the income on and value of your shares in the Fund will
@@ -134,7 +127,6 @@ export default function Disclosures() {
             When interest rates fall, the prices of these securities usually
             increase.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Extension Risk: Rising interest rates can cause the average maturity
             of the Fund&apos;s holdings of mortgage-backed securities to
@@ -143,7 +135,6 @@ export default function Disclosures() {
             certain of the Fund&apos;s investments to decline in value more than
             they would have declined due to the rise in interest rates alone.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Social Impact Investing Risk (applies to the Payden California
             Municipal Social Impact Fund): The Fund&apos;s policy of investing
@@ -159,13 +150,11 @@ export default function Disclosures() {
             Adviser believes its definitions are reasonable, the portfolio
             decisions it makes may differ from others&apos; views.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Municipal Securities Tax (applies to the Payden California Municipal
             Social Impact Fund): Income from municipal securities may be subject
             to the Federal alternative minimum tax.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Money Market Risk: An investment in the Payden Cash Balance Money
             Market Fund is not insured or guaranteed by the Federal Deposit
@@ -176,11 +165,9 @@ export default function Disclosures() {
             support to the Fund, and you should not expect that the sponsor will
             provide financial support to the Fund at any time.
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] font-bold text-black lg:text-[14px]">
             Additional Disclosures:
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             Please note that by your use of this website and/or sending Payden
             &amp; Rygel any information via this website, you acknowledge that
@@ -194,7 +181,6 @@ export default function Disclosures() {
             </Link>
             .
           </Typography>
-
           <Typography className="m-0 font-albertSans text-[14px] lg:text-[14px]">
             The investment strategy and investment management information
             presented on this website should not be construed to be formal
