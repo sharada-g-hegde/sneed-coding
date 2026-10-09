@@ -76,7 +76,7 @@ function LinkedInIcon() {
       height="30"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-7 w-7 lg:h-7 lg:w-7 2xl:h-5.5 2xl:w-5.5"
+      className="h-7 w-7 md:h-5.5 md:w-5.5 xl:h-7 xl:w-7 2xl:h-5.5 2xl:w-5.5"
       aria-hidden="true"
     >
       <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V9.5h3V19zM6.5 8.2a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S13 13.1 13 14.3V19h-3V9.5h2.9v1.3h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.6 2 3.6 4.6V19z" />
@@ -110,12 +110,13 @@ export default function Footer() {
     >
       <Container
         width="pageWidth"
-        className="justify-center items-center lg:px-16 w-full max-w-308 flex-col px-5 pb-12 pt-10 lg:pb-14 lg:pt-12 xl:max-w-none xl:px-[max(4.5vw,calc((100vw_-_1800px)/2))]"
+        className="w-full max-w-308 flex-col items-center justify-center px-5 pb-12 pt-10 md:px-4 lg:px-16 lg:pb-14 lg:pt-12 xl:max-w-none xl:px-[max(4.5vw,calc((100vw_-_1800px)/2))]"
       >
         <Container
           width="fullWidth"
-          className="grid grid-cols-1 gap-y-14 lg:grid-cols-[540px_1fr] lg:gap-x-19 2xl:grid-cols-[784px_1fr] 2xl:gap-x-28"
+          className="grid grid-cols-1 gap-y-14 md:gap-y-20 lg:grid-cols-[400px_1fr] lg:gap-x-12 lg:gap-y-14 xl:grid-cols-[540px_1fr] xl:gap-x-19 2xl:grid-cols-[784px_1fr] 2xl:gap-x-28"
         >
+          {/* Brand + newsletter */}
           <Container className="flex-col">
             <Link
               href="/"
@@ -131,7 +132,7 @@ export default function Footer() {
               />
             </Link>
 
-            <Typography className="m-0 mt-12 font-albertSans text-[16px] leading-8 lg:mt-12 lg:text-[16px] lg:leading-6!">
+            <Typography className="m-0 mt-12 font-albertSans text-[16px] leading-8 lg:mt-9 lg:text-[16px] lg:leading-6! xl:mt-12">
               Founded in 1983, Payden &amp; Rygel focuses on the active
               management of fixed income and equity portfolios across domestic
               and international markets. We advise leading institutions and
@@ -140,34 +141,34 @@ export default function Footer() {
               economies and capital markets.
             </Typography>
 
-            <Typography className="m-0 mt-20 font-albertSans text-[16px] font-semibold leading-8 lg:mt-14 lg:text-[16px] lg:leading-4 2xl:mt-19">
+            <Typography className="m-0 mt-20 font-albertSans text-[16px] font-semibold leading-8 lg:mt-19 lg:text-[16px] lg:leading-4 xl:mt-14 2xl:mt-19">
               Payden&apos;s expert insights delivered to your inbox
             </Typography>
 
-            <Typography className="m-0 mt-4 font-inter text-[16px] leading-8 lg:mt-5 lg:text-[16px] lg:leading-4 2xl:mt-6">
+            <Typography className="m-0 mt-4 font-inter text-[16px] leading-8 lg:mt-5 lg:text-[16px] lg:leading-6 xl:leading-4 2xl:mt-6">
               Subscribe to our newsletter to stay updated on features and
               releases.
             </Typography>
 
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="mt-5 flex flex-col gap-3 lg:mt-5 lg:flex-row lg:items-center 2xl:mt-6 2xl:gap-4"
+              className="mt-5 flex flex-col gap-3 lg:mt-5 lg:flex-row lg:items-center lg:gap-4 xl:gap-3 2xl:mt-6 2xl:gap-4"
             >
               <input
                 type="email"
                 placeholder="Enter your email"
                 aria-label="Email address"
-                className="h-16.5 w-full rounded-2xl bg-white/25 px-4 font-inter text-[18px] text-white outline-none placeholder:text-white focus-visible:ring-2 focus-visible:ring-white/70 lg:h-7 lg:flex-1 lg:rounded-lg lg:px-2 lg:text-[12px] 2xl:h-10 2xl:px-3 2xl:text-[14px]"
+                className="h-16.5 w-full rounded-2xl bg-white/25 px-4 font-inter text-[18px] text-white outline-none placeholder:text-white focus-visible:ring-2 focus-visible:ring-white/70 lg:h-10 lg:flex-1 lg:rounded-lg lg:px-3 lg:text-[15px] xl:h-7 xl:px-2 xl:text-[16px] 2xl:h-10 2xl:px-3 2xl:text-[16px]"
               />
               <button
                 type="submit"
-                className="h-14.5 w-full cursor-pointer rounded-full bg-[#5d7f95] font-outfit text-[17px] font-semibold text-white transition-colors hover:bg-[#6b8da3] lg:h-6.5 lg:w-18 lg:shrink-0 lg:text-[10px] 2xl:h-9.5 2xl:w-26 2xl:text-[12px]"
+                className="h-14.5 w-full cursor-pointer rounded-full bg-[#5d7f95] font-outfit text-[17px] font-semibold text-white transition-colors hover:bg-[#6b8da3] lg:h-9.5 lg:w-26 lg:shrink-0 lg:text-[13px] xl:h-6.5 xl:w-18 xl:text-[14px] 2xl:h-9.5 2xl:w-26 2xl:text-[16px]"
               >
                 Subscribe
               </button>
             </form>
 
-            <Typography className="m-0 mt-4 font-albertSans text-[17px] italic leading-6.5 lg:mt-3.5 lg:text-[12px] lg:leading-3 2xl:mt-5 2xl:text-[11px]">
+            <Typography className="m-0 mt-4 font-albertSans text-[17px] italic leading-6.5 lg:mt-3.5 lg:text-[14px] lg:leading-4 xl:leading-3 2xl:mt-5 2xl:text-[11px]">
               By subscribing, you agree to the relevant privacy policy for your
               location and consent to receive updates.
             </Typography>
@@ -182,24 +183,25 @@ export default function Footer() {
             </Link>
           </Container>
 
-          <Container className="grid grid-cols-2 gap-x-6 gap-y-14 lg:grid-cols-3 lg:gap-x-0 lg:gap-y-0 2xl:grid-cols-[345px_345px_1fr]">
+          {/* Link columns */}
+          <Container className="grid grid-cols-2 gap-x-6 gap-y-14 md:grid-cols-[269px_269px_1fr] md:gap-x-0 md:gap-y-0 lg:grid-cols-[171px_171px_1fr] xl:grid-cols-3 2xl:grid-cols-[345px_345px_1fr]">
             {COLUMNS.map((col, ci) => (
               <Container
                 key={ci}
-                className="flex-col gap-14 lg:gap-9 2xl:gap-13"
+                className="flex-col gap-14 md:gap-12 lg:pr-4 xl:gap-9 xl:pr-0 2xl:gap-13"
               >
                 {col.groups.map((group) => (
                   <nav key={group.title} aria-label={group.title}>
-                    <Typography className="m-0 font-outfit text-[20px] font-semibold lg:font-inter lg:text-[12px]">
+                    <Typography className="m-0 font-outfit text-[20px] font-semibold md:text-[16px] xl:font-inter xl:text-[16px]">
                       {group.title}
                     </Typography>
-                    <ul className="m-0 mt-6 flex list-none flex-col gap-5 p-0 lg:mt-5.5 lg:gap-3.5 2xl:mt-8 2xl:gap-5">
+                    <ul className="m-0 mt-6 flex list-none flex-col gap-5 p-0 md:gap-3.5 xl:mt-5.5 2xl:mt-8 2xl:gap-5">
                       {group.links.map((l) => (
                         <li key={l.label}>
                           <Link
                             variant="Link"
                             href={l.href}
-                            className="font-inter text-[14px] leading-6.5 hover:underline lg:text-[14px] lg:leading-4"
+                            className="font-inter text-[14px] leading-6.5 hover:underline md:leading-6 xl:leading-4"
                           >
                             {l.label}
                           </Link>
@@ -213,6 +215,7 @@ export default function Footer() {
           </Container>
         </Container>
 
+        {/* Legal row */}
         <Container
           width="fullWidth"
           className="mt-14 flex-col gap-8 border-t border-white/30 pt-8 lg:mt-20 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:pt-6 2xl:mt-16"
