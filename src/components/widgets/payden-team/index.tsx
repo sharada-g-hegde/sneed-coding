@@ -270,16 +270,16 @@ export default function Team() {
                       </Container>
 
                       <Container className="mt-6 shrink-0 flex-col gap-2 lg:mt-0 lg:w-10rem">
-                        <Typography className="font-brandon-grotesque lg:text-[20px] leading-9 text-white">
+                        <Typography className="font-brandon-grotesque lg:text-[20px] text-[18px] leading-9 text-white">
                           {selectedMember.name}
                         </Typography>
 
-                        <Typography className="font-albertSans text-[18px] text-white/90">
+                        <Typography className="font-albertSans text-[16px] text-white/90">
                           {selectedMember.role}
                         </Typography>
                       </Container>
 
-                      <Container className="mt-6 flex-1 flex-col gap-1 lg:mt-0 lg:pr-12">
+                      <Container className="mt-1 flex-1 flex-col gap-1 lg:mt-0 lg:pr-12">
                         {selectedMember.bio.map((paragraph) => (
                           <Typography
                             key={paragraph.slice(0, 40)}
