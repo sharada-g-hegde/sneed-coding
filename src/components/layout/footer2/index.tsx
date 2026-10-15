@@ -158,11 +158,11 @@ export default function Footer() {
                 type="email"
                 placeholder="Enter your email"
                 aria-label="Email address"
-                className="h-16.5 w-full rounded-2xl bg-white/25 px-4 font-inter text-[18px] text-white outline-none placeholder:text-white focus-visible:ring-2 focus-visible:ring-white/70 lg:h-10 lg:flex-1 lg:rounded-lg lg:px-3 lg:text-[15px] xl:h-7 xl:px-2 xl:text-[16px] 2xl:h-10 2xl:px-3 2xl:text-[16px]"
+                className="h-10.5 w-full rounded-2xl bg-white/25 px-4 font-inter text-[18px] text-white outline-none placeholder:text-white focus-visible:ring-2 focus-visible:ring-white/70 lg:h-12 lg:flex-1 lg:rounded-lg lg:px-3 lg:text-[15px] xl:h-10 xl:px-2 xl:text-[16px] 2xl:h-10 2xl:px-3 2xl:text-[16px]"
               />
               <button
                 type="submit"
-                className="h-14.5 w-full cursor-pointer rounded-full bg-[#5d7f95] font-outfit text-[17px] font-semibold text-white transition-colors hover:bg-[#6b8da3] lg:h-9.5 lg:w-26 lg:shrink-0 lg:text-[13px] xl:h-6.5 xl:w-18 xl:text-[14px] 2xl:h-9.5 2xl:w-26 2xl:text-[16px]"
+                className="h-14.5 w-full cursor-pointer rounded-full bg-[#5d7f95] font-outfit text-[17px] font-semibold text-white transition-colors hover:bg-[#6b8da3] lg:h-10 lg:w-26 lg:shrink-0 lg:text-[13px] xl:h-10 xl:w-18 xl:text-[14px] 2xl:h-10 2xl:w-26 2xl:text-[16px]"
               >
                 Subscribe
               </button>

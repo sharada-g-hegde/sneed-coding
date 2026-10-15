@@ -10,7 +10,7 @@ type IProps<T extends IComponentType> = {
   VariantProps<typeof variants>;
 
 const variants = tv({
-  base: "font-DM-Sans",
+  base: "font-brandon-grotesque",
   variants: {
     variant: {
       h1: "text-[40px] leading-[100%] font-fraunces font-thin md:text-[44px] md:leading-[100%]",

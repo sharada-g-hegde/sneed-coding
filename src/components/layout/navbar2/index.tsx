@@ -306,7 +306,7 @@ function MobileAccordion({
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
-        <Container className="overflow-hidden">{children}</Container>
+        <Container className="overflow-hidden flex-col">{children}</Container>
       </Container>
     </Container>
   );
