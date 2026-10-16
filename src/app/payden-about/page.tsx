@@ -1,3 +1,4 @@
+import Container from "@/components/elements/container";
 import Footer from "@/components/layout/footer2";
 import Navbar from "@/components/layout/navbar2";
 import AboutHero from "@/components/widgets/payden-about-hero";
@@ -11,16 +12,21 @@ import Team from "@/components/widgets/payden-team";
 export default function PaydenAbout() {
   return (
     <>
-      <Navbar />
-      <AboutHero />
-      <OurStory />
-      <Milestone />
-      <Descipline />
-      <Clients />
-      <Team />
-      <Locations />
+      <Container
+        width="fullWidth"
+        className="flex-col items-center justify-center overflow-hidden"
+      >
+        <Navbar />
+        <AboutHero />
+        <OurStory />
+        <Milestone />
+        <Descipline />
+        <Clients />
+        <Team />
+        <Locations />
 
-      <Footer />
+        <Footer />
+      </Container>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import Container from "@/components/elements/container";
 import Footer from "@/components/layout/footer2";
 import Navbar from "@/components/layout/navbar2";
 import CtaBanner from "@/components/widgets/payden-discover";
@@ -9,14 +10,19 @@ import PaydenTwoColumnText from "@/components/widgets/payden-two-column-text";
 export default function PaydenFund() {
   return (
     <>
-      <Navbar />
-      <PaydenHomeHero />
-      <Glance />
-      <PaydenTwoColumnText />
-      <Investement />
-      <CtaBanner />
+      <Container
+        width="fullWidth"
+        className="flex-col items-center justify-center overflow-hidden"
+      >
+        <Navbar />
+        <PaydenHomeHero />
+        <Glance />
+        <PaydenTwoColumnText />
+        <Investement />
+        <CtaBanner />
 
-      <Footer />
+        <Footer />
+      </Container>
     </>
   );
 }
