@@ -105,7 +105,7 @@ export default function FundsHero() {
             U.S. Funds
           </Typography>
 
-          <Typography className="mt-6 max-w-[22rem] text-[20px] leading-8 font-albertSans lg:mt-6 lg:max-w-160 lg:text-[18px] lg:leading-7 2xl:mt-[30px] 2xl:text-[16px] 2xl:leading-[26px]">
+          <Typography className="mt-6 max-w-88 text-[20px] leading-8 font-albertSans lg:mt-6 lg:max-w-160 lg:text-[18px] lg:leading-7 2xl:mt-[30px] 2xl:text-[16px] 2xl:leading-[26px]">
             Discover a diverse range of U.S. funds designed to support a variety
             of investment objectives.
           </Typography>
@@ -142,7 +142,7 @@ export default function FundsHero() {
               aria-expanded={shareClassOpen}
               aria-haspopup="listbox"
               onClick={() => setShareClassOpen((open) => !open)}
-              className={`flex h-10 cursor-pointer items-center justify-between rounded-xl border bg-[#435667] px-4 text-left text-[17px] text-white outline-none transition-colors 2xl:h-10 2xl:text-[15px] ${
+              className={`flex h-10 cursor-pointer lg:w-full items-center justify-between rounded-xl border bg-[#435667] px-4 text-left text-[17px] text-white outline-none transition-colors 2xl:h-10 2xl:text-[15px] ${
                 shareClassOpen ? "border-white" : "border-transparent"
               }`}
             >
@@ -158,7 +158,7 @@ export default function FundsHero() {
             {shareClassOpen && (
               <Container
                 role="listbox"
-                className="absolute left-0 top-full z-50 mt-0 flex-col max-h-[370px] w-full overflow-y-auto rounded-b-[20px] bg-[#435667] py-1 shadow-lg"
+                className="absolute left-0 top-full z-50 mt-0 flex-col max-h-[370px] w-full overflow-y-auto rounded-[20px] bg-[#435667] py-1 shadow-lg"
               >
                 {SHARE_CLASSES.map((shareClass) => (
                   <button
