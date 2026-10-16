@@ -96,7 +96,6 @@ export default function FundsHero() {
 
       const offset = window.innerWidth >= 1024 ? NAVBAR_DESKTOP : NAVBAR_MOBILE;
 
-      // Height of the always-visible first row (excludes the expanding menus)
       const row = bar.firstElementChild as HTMLElement | null;
       if (row) setRowHeight(row.offsetHeight);
 
@@ -134,13 +133,13 @@ export default function FundsHero() {
 
         <Container
           width="fullWidth"
-          className="relative z-10 flex w-full max-w-308 flex-col px-5 pb-12 pt-20 lg:px-16 lg:pb-16 lg:pt-28 xl:max-w-none xl:px-[max(4.5vw,calc((100vw_-_1800px)/2))] 2xl:pt-30"
+          className="relative z-10 flex w-full max-w-308 flex-col px-5 pb-12 pt-20 lg:px-16 lg:pb-16 lg:pt-30 lg:mt-30 mt-25 xl:max-w-none xl:px-[max(4.5vw,calc((100vw-1800px)/2))] 2xl:pt-30"
         >
-          <Typography className="font-brandon-grotesque text-[40px] font-medium leading-tight lg:text-[64px] 2xl:text-[52px]">
+          <Typography className="font-brandon-grotesque text-[40px] font-medium leading-tight lg:text-[64px]">
             U.S. Funds
           </Typography>
 
-          <Typography className="mt-6 max-w-88 text-[20px] leading-8 font-albertSans lg:mt-6 lg:max-w-160 lg:text-[18px] lg:leading-7 2xl:mt-[30px] 2xl:text-[16px] 2xl:leading-[26px]">
+          <Typography className="mt-6 max-w-88 text-[20px] leading-8 font-albertSans lg:mt-6 lg:max-w-160 lg:text-[18px] lg:leading-7 2xl:mt-7.5">
             Discover a diverse range of U.S. funds designed to support a variety
             of investment objectives.
           </Typography>
@@ -176,9 +175,9 @@ export default function FundsHero() {
       >
         <Container
           width="fullWidth"
-          className="flex w-full max-w-308 items-center gap-4 px-4 py-3 lg:px-16 xl:max-w-none xl:px-[max(4.5vw,calc((100vw_-_1800px)/2))]"
+          className="flex w-full max-w-308 items-center gap-4 px-4 py-3 lg:px-16 xl:max-w-none xl:px-[max(4.5vw,calc((100vw-1800px)/2))]"
         >
-          <Container className="relative z-0 w-full max-w-75 shrink-0 lg:max-w-none lg:basis-[33%] 2xl:basis-[480px]">
+          <Container className="relative z-0 w-full max-w-75 shrink-0 lg:max-w-none lg:basis-[33%] 2xl:basis-120">
             <button
               type="button"
               aria-expanded={shareClassOpen}
@@ -200,7 +199,7 @@ export default function FundsHero() {
             {shareClassOpen && (
               <Container
                 role="listbox"
-                className="absolute left-0 top-full z-50 mt-0 flex-col max-h-[370px] w-full overflow-y-auto rounded-[20px] bg-[#435667] py-1 shadow-lg"
+                className="absolute left-0 top-full z-50 mt-0 flex-col max-h-92.5 w-full overflow-y-auto rounded-[20px] bg-[#435667] py-1 shadow-lg"
               >
                 {SHARE_CLASSES.map((shareClass) => (
                   <button
@@ -212,7 +211,7 @@ export default function FundsHero() {
                       setSelectedShareClass(shareClass);
                       setShareClassOpen(false);
                     }}
-                    className={`block w-full cursor-pointer px-4 py-[17px] text-left text-[17px] leading-6 transition-colors hover:bg-white/10 2xl:text-[15px] ${
+                    className={`block w-full cursor-pointer px-4 py-4.25 text-left text-[17px] leading-6 transition-colors hover:bg-white/10 2xl:text-[15px] ${
                       selectedShareClass === shareClass
                         ? "text-white"
                         : "text-white/90"

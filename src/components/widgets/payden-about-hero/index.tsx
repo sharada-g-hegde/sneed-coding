@@ -17,9 +17,9 @@ export default function AboutHero() {
 
       <Container
         width="fullWidth"
-        className="relative z-10 flex-col items-center gap-6 px-4 py-16 text-white md:py-30 lg:max-w-240 lg:px-16"
+        className="relative z-10 flex-col items-center gap-6 px-4 lg:mt-30 mt-15 py-16 text-white md:py-30 lg:max-w-240 lg:px-16"
       >
-        <Typography className="text-center font-brandon-grotesque text-[35px] font-normal lg:text-[64px] lg:leading-22!">
+        <Typography className="text-center font-brandon-grotesque leading-12! text-[40px] font-normal lg:text-[64px] lg:leading-22!">
           Where Insight Meets Active Management
         </Typography>
         <Typography className="text-center font-albertSans text-[18px] lg:text-[18px]">

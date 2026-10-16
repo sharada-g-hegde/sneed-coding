@@ -23,7 +23,7 @@ export default function PaydenHomeHero() {
         >
           <Container
             width="fullWidth"
-            className="2xl:max-w-480 flex-col gap-6 px-4 py-16 md:py-30 lg:gap-16 lg:px-16 items-start"
+            className="2xl:max-w-480 flex-col gap-6 px-4 py-46 lg:py-80 lg:gap-16 lg:px-16 items-start"
           >
             <Container className="flex-col max-w-170">
               <Container className="flex-col gap-6">
@@ -31,7 +31,7 @@ export default function PaydenHomeHero() {
                   40+ Years of Independent <br className="hidden lg:flex" />{" "}
                   Active Management
                 </Typography>
-                <Typography className="leading-7 lg:leading-7! font-albertSans text-[20px] lg:text-[18px] text-white">
+                <Typography className="leading-7 lg:leading-7! font-albertSans text-[18px] lg:text-[18px] text-white">
                   Partnering with institutions since 1983 to deliver disciplined
                   fixed income, equity, and multi-asset strategies.Trusted by
                   institutional clients and advisors worldwide.
@@ -39,7 +39,7 @@ export default function PaydenHomeHero() {
                 <Container className="mt-2 gap-4">
                   <Link
                     href=""
-                    className="font-albertSans cursor-pointer text-center font-semibold duration-300 hover:text-white bg-white/25 text-white hover:bg-teal-500/60 rounded-[100px] px-6 py-[.62rem] text-lg leading-6 shadow-[2px_2px_6px_0_rgba(7,26,39,0.10)] backdrop-blur-md hover:shadow-[4px_4px_6px_0px_#071A2726] hover:backdrop-blur-xl"
+                    className="font-albertSans cursor-pointer text-center font-semibold duration-300 hover:text-white bg-white/25 text-white hover:bg-teal-500/60 rounded-[100px] px-6 py-[.62rem] text-[16px] lg:text-[16px] leading-6 shadow-[2px_2px_6px_0_rgba(7,26,39,0.10)] backdrop-blur-md hover:shadow-[4px_4px_6px_0px_#071A2726] hover:backdrop-blur-xl"
                   >
                     Explore Investment Strategies
                   </Link>

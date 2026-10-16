@@ -135,7 +135,7 @@ export default function SurfaceGrid({
   return (
     <Container width="fullWidth" className="flex-col items-center">
       <Container className="3xl:max-w-[120rem] w-full 2xl:max-w-360 flex-col gap-6 lg:gap-10 px-4 py-10 lg:px-16 lg:py-16">
-        <Container className="flex-col gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+        <Container className="flex-col gap-4 xl:flex-row lg:items-start lg:justify-between lg:gap-10">
           <Typography className="m-0 font-outfit text-[32px] leading-tight font-semibold text-[#272631] lg:text-[40px]">
             {heading}
           </Typography>
