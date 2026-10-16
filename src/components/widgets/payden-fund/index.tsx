@@ -205,8 +205,26 @@ function Chevron({ className = "" }: { className?: string }) {
   );
 }
 
-const th = "px-3 pb-3 text-right text-[12px] font-normal text-[#3d3d45]";
+// Table header columns. Text columns are left-aligned, numeric/date columns are
+// right-aligned. Headers and cells share the same alignment and px-3 padding
+// so every value sits directly under its heading.
+const COLUMNS: { label: string; align: "left" | "right"; width?: string }[] = [
+  { label: "Share Class", align: "left", width: "w-[14%]" },
+  { label: "Ticker", align: "left", width: "w-[12%]" },
+  { label: "YTD", align: "right" },
+  { label: "1 Year", align: "right" },
+  { label: "5 Year", align: "right" },
+  { label: "10 Year", align: "right" },
+  { label: "Since Inception", align: "right" },
+  { label: "Inception Date", align: "right" },
+];
+
+const thBase =
+  "px-3 pb-3 text-[12px] lg:text-[14px] font-albertSans font-semibold text-[#3d3d45]";
+
+const tdLeft = "px-3 py-5 text-left text-[12px] font-semibold text-[#272631]";
 const td = "px-3 py-5 text-right text-[12px] text-[#1d6485]";
+const tdDate = "px-3 py-5 text-right text-[12px] text-[#525159]";
 
 function FundAccordion({
   fund,
@@ -232,12 +250,12 @@ function FundAccordion({
 
       <label
         htmlFor={inputId}
-        className="flex cursor-pointer items-center justify-between px-6 py-5 group-has-checked:text-[#00b6b2] 2xl:py-7"
+        className="flex cursor-pointer items-center justify-between px-6 py-5 lg:py-8 group-has-checked:text-[#00b6b2] 2xl:py-7"
       >
-        <span className="font-outfit text-[18px] lg:text-[20px] font-medium text-inherit group-not-has-checked:text-[#272631]">
+        <span className="font-brandon-grotesque text-[18px] lg:text-[24px] font-medium text-inherit group-not-has-checked:text-[#272631]">
           {fund.name}
         </span>
-        <span className="flex items-center gap-2 font-inter text-[12px] lg:text-[14px] font-medium">
+        <span className="flex items-center gap-2 font-albertSans text-[12px] lg:text-[16px] font-medium">
           {count} Share {count > 1 ? "Classes" : "Class"}
           <Chevron className="transition-transform duration-300 group-has-checked:rotate-180" />
         </span>
@@ -249,40 +267,32 @@ function FundAccordion({
       >
         <Container width="fullWidth" className="overflow-hidden">
           <Container width="fullWidth" className="px-4 pb-6">
-            <table className="w-full border-collapse font-inter">
+            <table className="w-full table-fixed border-collapse font-inter">
               <thead>
                 <tr className="border-b border-[#9aa1a8]">
-                  <th className="px-3 pb-3 text-left text-[12px] lg:text-[14px] font-normal text-[#3d3d45]">
-                    Share Class
-                  </th>
-                  <th className="px-3 pb-3 text-left text-[12px] font-normal text-[#3d3d45]">
-                    Ticker
-                  </th>
-                  <th className={th}>YTD</th>
-                  <th className={th}>1 Year</th>
-                  <th className={th}>5 Year</th>
-                  <th className={th}>10 Year</th>
-                  <th className={th}>Since Inception</th>
-                  <th className={th}>Inception Date</th>
+                  {COLUMNS.map((col) => (
+                    <th
+                      key={col.label}
+                      className={`${thBase} ${
+                        col.align === "left" ? "text-left" : "text-right"
+                      } ${col.width ?? ""}`}
+                    >
+                      {col.label}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
                 {fund.classes.map((c) => (
                   <tr key={c.ticker}>
-                    <td className="px-3 py-5 text-[12px] font-semibold text-[#272631]">
-                      {c.name}
-                    </td>
-                    <td className="px-3 py-5 text-[12px] font-semibold text-[#272631]">
-                      {c.ticker}
-                    </td>
+                    <td className={tdLeft}>{c.name}</td>
+                    <td className={tdLeft}>{c.ticker}</td>
                     <td className={td}>{c.ytd}</td>
                     <td className={td}>{c.y1}</td>
                     <td className={td}>{c.y5}</td>
                     <td className={td}>{c.y10}</td>
                     <td className={td}>{c.inception}</td>
-                    <td className="px-3 py-5 text-right text-[12px] text-[#525159]">
-                      {c.date}
-                    </td>
+                    <td className={tdDate}>{c.date}</td>
                   </tr>
                 ))}
               </tbody>
@@ -313,20 +323,20 @@ function MobileCard({ card }: { card: (typeof MOBILE_CARDS)[number] }) {
         className="items-start justify-between gap-3"
       >
         <Container className="flex-col">
-          <span className="font-outfit text-[18px] font-semibold leading-6 text-[#272631]">
+          <span className="font-albertSans text-[16px] font-semibold leading-6 text-[#272631]">
             {card.fundName}
           </span>
-          <span className="mt-2 font-inter text-[16px] text-[#525159]">
+          <span className="mt-2 font-albertSans text-[14px] text-[#525159]">
             {card.name} Class
           </span>
         </Container>
-        <span className="rounded-lg bg-[#eceff1] px-4 py-3.5 font-inter text-[16px] font-medium text-[#272631]">
+        <span className="rounded-lg bg-[#eceff1] px-4 py-3.5 font-albertSans text-[14px] font-medium text-[#272631]">
           {card.ticker}
         </span>
       </Container>
 
       <table className="mt-6 w-full border-collapse font-inter">
-        <caption className="border-b border-[#272631] pb-3 text-left text-[16px] font-medium text-[#272631]">
+        <caption className="border-b border-[#272631] pb-3 text-left text-[14px] font-medium text-[#272631]">
           Fund Performance
         </caption>
         <tbody>
@@ -337,11 +347,11 @@ function MobileCard({ card }: { card: (typeof MOBILE_CARDS)[number] }) {
             >
               <th
                 scope="row"
-                className="py-4 text-left text-[16px] font-semibold text-[#272631]"
+                className="py-2 text-left text-[14px] font-semibold text-[#272631]"
               >
                 {label}
               </th>
-              <td className="py-4 text-right text-[16px] text-[#525159]">
+              <td className="py-2 text-right text-[14px] text-[#525159]">
                 {value}
               </td>
             </tr>
@@ -372,7 +382,7 @@ function Pagination({
   return (
     <nav
       aria-label="Pagination"
-      className={`flex items-center justify-center gap-2 font-inter text-[18px] text-[#525159] ${className}`}
+      className={`flex items-center justify-center font-semibold gap-2 text-[14px] text-[#525159] ${className}`}
     >
       {pages.map((p) => (
         <button
@@ -380,7 +390,7 @@ function Pagination({
           type="button"
           onClick={() => onChange(p)}
           aria-current={p === page ? "page" : undefined}
-          className={`flex h-9 min-w-9 cursor-pointer items-center justify-center rounded-full px-2 ${
+          className={`flex h-7 min-w-4 cursor-pointer items-center justify-center rounded-full px-2 ${
             p === page ? "bg-[#e3e8ec] font-medium text-[#272631]" : ""
           }`}
         >
@@ -394,7 +404,21 @@ function Pagination({
         disabled={page === totalPages}
         className="flex h-9 min-w-9 cursor-pointer items-center justify-center disabled:opacity-40"
       >
-        &rsaquo;
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 12L10 8L6 4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
       </button>
       <button
         type="button"
@@ -403,7 +427,21 @@ function Pagination({
         disabled={page === totalPages}
         className="flex h-9 min-w-9 cursor-pointer items-center justify-center disabled:opacity-40"
       >
-        &raquo;
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 11.3334L7.33333 8.00008L4 4.66675M8.66667 11.3334L12 8.00008L8.66667 4.66675"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
       </button>
     </nav>
   );
@@ -432,10 +470,10 @@ export default function AvailableFunds() {
         width="fullWidth"
         className="flex-col bg-[#f3f6fb] px-5 pb-8 pt-8 lg:bg-transparent lg:px-0 lg:pt-12 lg:pb-0"
       >
-        <Typography className="font-outfit text-[26px] font-medium text-[#272631] lg:text-[32px] 2xl:text-[24px]">
+        <Typography className="font-brandon-grotesque text-[24px] font-medium text-[#272631] lg:text-[32px] 2xl:text-[24px]">
           Available U.S. Funds
         </Typography>
-        <Typography className="mt-2 font-inter text-[20px] text-[#6b7480] lg:text-[18px] 2xl:text-[16px]">
+        <Typography className="mt-2 font-albertSans text-[16px] text-[#6b7480] lg:text-[18px] 2xl:text-[16px]">
           As of 08/31/2026
         </Typography>
 
@@ -443,12 +481,12 @@ export default function AvailableFunds() {
           width="fullWidth"
           className="mt-8 items-end justify-between lg:mt-6 2xl:mt-8"
         >
-          <Container className="flex-col gap-1.5 font-inter text-[16px] italic leading-7 text-[#617C93] lg:text-[16px] lg:leading-4.5 2xl:gap-2.5 2xl:text-[13px]">
-            <Typography>
+          <Container className="flex-col gap-1.5       2xl:gap-2.5">
+            <Typography className="font-albertSans lg:text-[16px] text-[14px] text-[#617C93] italic leading-5! lg:leading-4.5">
               Past performance is no guarantee of future results. Please see
               below for important disclosures.
             </Typography>
-            <Typography>
+            <Typography className="font-albertSans lg:text-[16px] text-[14px] text-[#617C93] italic leading-5! lg:leading-4.5">
               Returns less than one year are not annualized. All returns are net
               of fees.
             </Typography>
@@ -456,7 +494,7 @@ export default function AvailableFunds() {
 
           <label
             htmlFor="show-all"
-            className="hidden cursor-pointer items-center gap-2 font-inter text-[12px] font-medium lg:text-[14px] text-[#272631] lg:flex"
+            className="hidden cursor-pointer items-center gap-2 font-albertSans text-[14px] font-medium lg:text-[16px] text-[#272631] lg:flex"
           >
             <span className="group-has-[#show-all:checked]/all:hidden">
               Show all share classes

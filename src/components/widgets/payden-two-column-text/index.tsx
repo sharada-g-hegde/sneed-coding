@@ -13,7 +13,7 @@ const STRATEGY_CARDS = [
     href: "/",
   },
   {
-    image: "/images/Rectangle_1.webp",
+    image: "/images/rectangle-2.webp",
     title: "Unconstrained Strategies",
     description:
       "Designed to balance capital preservation and growth through the flexibility to invest across global credit markets.",
@@ -21,7 +21,7 @@ const STRATEGY_CARDS = [
     href: "/",
   },
   {
-    image: "/images/Rectangle_1.webp",
+    image: "/images/rectangle-3.webp",
     title: "Equity Income Strategy",
     description:
       "An equity strategy designed for risk-focused investors seeking income and long-term price appreciation.",
@@ -29,7 +29,7 @@ const STRATEGY_CARDS = [
     href: "/",
   },
   {
-    image: "/images/Rectangle_1.webp",
+    image: "/images/rectangle-4.webp",
     title: "Balanced Strategies",
     description:
       "A balanced strategy that combines U.S. stocks, bonds, and cash to support long-term growth and capital preservation, drawing on insights from Payden’s economists, strategists, and analysts.",
@@ -47,9 +47,9 @@ export default function PaydenTwoColumnText() {
       >
         <Container className="w-full flex-col justify-center">
           <Container className="w-full 2xl:max-w-480 grid grid-cols-1 gap-6 xl:grid-cols-[48%_1fr] xl:gap-20">
-            <Typography className="text-[36px] leading-11 lg:text-[48px] font-semibold lg:leading-16">
+            <Typography className="text-[36px] text-[#2F3B47] leading-11 lg:text-[48px] font-normal lg:leading-16">
               The Art of Investing Through Tailored Strategies Designed to
-              Preserve, Grow, and Protect.
+              Preserve, Grow, and <br /> Protect.
             </Typography>
             <Typography className="text-[16px] lg:text-[16px] font-albertSans text-[#2F3B47]">
               We specialize in developing and managing customized investment
@@ -75,7 +75,7 @@ export default function PaydenTwoColumnText() {
                     className="w-full rounded-t-xl"
                   />
                   <Container className="h-full flex-col items-start gap-4">
-                    <Typography className="lg:text-[24px] font-albertSans font-semibold">
+                    <Typography className="lg:text-[24px] font-brandon-grotesque text-[20px] font-normal text-[#2F3B47]">
                       {card.title}
                     </Typography>
                     <Typography className="font-albertSans text-[16px] lg:text-[16px] text-[#2F3B47]">

@@ -24,7 +24,7 @@ export default function NumbersSection() {
   return (
     <Container
       width="fullWidth"
-      className="px-0 py-0 sm:px-4 sm:py-4 lg:px-2 lg:py-0 items-center justify-center"
+      className="px-4 py-0 sm:px-4 sm:py-4 lg:px-2 lg:py-0 items-center justify-center"
     >
       <Container
         width="pageWidth"

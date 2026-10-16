@@ -375,7 +375,7 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
           {study.title}
         </Typography>
 
-        <Typography className="m-0 mt-2 text-[12px] lg:leading-5 leading-snug text-gray-500">
+        <Typography className="m-0 mt-2 text-[12px] lg:text-[14px] lg:leading-5.5 font-inter leading-snug text-gray-500">
           {study.excerpt}
         </Typography>
 

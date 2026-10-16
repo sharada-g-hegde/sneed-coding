@@ -143,7 +143,7 @@ export default function ProductVideoCarousel({
                     </Typography>
 
                     <Container className="hidden max-h-0 overflow-hidden transition-[max-height,margin-top] duration-300 ease-in-out group-hover:mt-1.5 group-hover:max-h-32 sm:block">
-                      <Typography className="m-0 text-[12px] lg:leading-6! text-white lg:text-[18px]">
+                      <Typography className="m-0 text-[12px] lg:leading-6! font-inter text-white lg:text-[18px]">
                         {video.description}
                       </Typography>
                     </Container>

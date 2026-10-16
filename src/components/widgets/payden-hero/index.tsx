@@ -99,13 +99,13 @@ export default function FundsHero() {
 
         <Container
           width="fullWidth"
-          className="relative z-10 flex w-full max-w-308 flex-col px-5 pb-12 pt-20 lg:px-16 lg:pb-16 lg:pt-32 xl:max-w-none xl:px-[max(4.5vw,calc((100vw_-_1800px)/2))] 2xl:pt-30"
+          className="relative z-10 flex w-full max-w-308 flex-col px-5 pb-12 pt-20 lg:px-16 lg:pb-16 lg:pt-28 xl:max-w-none xl:px-[max(4.5vw,calc((100vw_-_1800px)/2))] 2xl:pt-30"
         >
-          <Typography className="font-albertSans text-[40px] font-medium leading-tight lg:text-[68px] 2xl:text-[52px]">
+          <Typography className="font-brandon-grotesque text-[40px] font-medium leading-tight lg:text-[64px] 2xl:text-[52px]">
             U.S. Funds
           </Typography>
 
-          <Typography className="mt-6 max-w-[22rem] text-[20px] leading-8 font-albertSans lg:mt-10 lg:max-w-160 lg:text-[18px] lg:leading-9 2xl:mt-[30px] 2xl:text-[16px] 2xl:leading-[26px]">
+          <Typography className="mt-6 max-w-[22rem] text-[20px] leading-8 font-albertSans lg:mt-6 lg:max-w-160 lg:text-[18px] lg:leading-7 2xl:mt-[30px] 2xl:text-[16px] 2xl:leading-[26px]">
             Discover a diverse range of U.S. funds designed to support a variety
             of investment objectives.
           </Typography>
@@ -114,7 +114,7 @@ export default function FundsHero() {
             <input
               type="text"
               placeholder="Search Ticker / Fund Name Here"
-              className="h-12.5 w-full rounded-xl bg-white/20 pl-4 pr-14 text-[17px] text-white placeholder:text-white/90 outline-none backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-white/70 lg:text-[19px] 2xl:h-10 2xl:text-[15px]"
+              className="h-10 w-full rounded-xl bg-white/20 pl-4 pr-14 text-[17px] text-white placeholder:text-white/90 outline-none backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-white/70 lg:text-[19px] 2xl:h-10 2xl:text-[15px]"
             />
 
             <button
@@ -134,7 +134,7 @@ export default function FundsHero() {
       >
         <Container
           width="fullWidth"
-          className="flex w-full max-w-308 items-center gap-4 px-5 py-3 lg:px-16 xl:max-w-none xl:px-[max(4.5vw,calc((100vw_-_1800px)/2))]"
+          className="flex w-full max-w-308 items-center gap-4 px-4 py-3 lg:px-16 xl:max-w-none xl:px-[max(4.5vw,calc((100vw_-_1800px)/2))]"
         >
           <Container className="relative z-0 w-full max-w-75 shrink-0 lg:max-w-none lg:basis-[33%] 2xl:basis-[480px]">
             <button
@@ -142,7 +142,7 @@ export default function FundsHero() {
               aria-expanded={shareClassOpen}
               aria-haspopup="listbox"
               onClick={() => setShareClassOpen((open) => !open)}
-              className={`flex h-12.5 w-full cursor-pointer items-center justify-between rounded-xl border bg-[#435667] px-4 text-left text-[17px] text-white outline-none transition-colors 2xl:h-10 2xl:text-[15px] ${
+              className={`flex h-10 cursor-pointer items-center justify-between rounded-xl border bg-[#435667] px-4 text-left text-[17px] text-white outline-none transition-colors 2xl:h-10 2xl:text-[15px] ${
                 shareClassOpen ? "border-white" : "border-transparent"
               }`}
             >

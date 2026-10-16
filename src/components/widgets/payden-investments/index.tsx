@@ -5,7 +5,7 @@ import Typography from "@/components/elements/typography";
 
 const INVESTMENT_CARDS = [
   {
-    image: "/images/Rectangle_1.webp",
+    image: "/images/fund-1.webp",
     title: "U.S. Funds",
     description:
       "Offering a diversified lineup of equity, fixed income, and cash balance funds across the risk and return spectrum.",
@@ -13,7 +13,7 @@ const INVESTMENT_CARDS = [
     href: "/",
   },
   {
-    image: "/images/Rectangle_1.webp",
+    image: "/images/fund-2.webp",
     title: "UCITS Funds",
     description:
       "A family of UCITS compliant offshore funds domiciled in Dublin, featuring bond and equity strategies that range from short-term cash management to global fixed income and equity investments.",
@@ -21,7 +21,7 @@ const INVESTMENT_CARDS = [
     href: "/",
   },
   {
-    image: "/images/Rectangle_1.webp",
+    image: "/images/fund-3.webp",
     title: "AIF",
     description:
       "The Payden Multi Asset Credit Fund, domiciled in Dublin under Payden Global AIF ICAV, reflects a proven and disciplined investment process tailored for a Qualifying Investor Alternative Investment Fund.",
@@ -60,7 +60,7 @@ export default function Investement() {
                     className="rounded-t-xl"
                   />
                   <Container className="h-full flex-col items-start gap-4 p-8">
-                    <Typography className="text-white text-[18px] lg:text-[24px] font-semibold">
+                    <Typography className="text-white text-[18px] lg:text-[24px] font-normal">
                       {card.title}
                     </Typography>
                     <Typography className="text-white lg:text-[16px] text-[16px] font-albertSans">

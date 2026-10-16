@@ -11,7 +11,6 @@ export default function PaydenHomeHero() {
           src="/images/Test_3.webp"
           alt="hero"
           fill
-          priority
           className="absolute inset-0 z-0 h-full w-full object-cover object-top lg:object-center"
         />
 
@@ -26,9 +25,9 @@ export default function PaydenHomeHero() {
             width="fullWidth"
             className="2xl:max-w-480 flex-col gap-6 px-4 py-16 md:py-30 lg:gap-16 lg:px-16 items-start"
           >
-            <Container className="flex-col max-w-200">
+            <Container className="flex-col max-w-170">
               <Container className="flex-col gap-6">
-                <Typography className="font-outfit font-semibold text-[40px] leading-12 text-white! lg:text-[64px] lg:leading-20 lg:tracking-[-0.08rem]">
+                <Typography className="font-brandon-grotesque font-normal text-[40px] leading-12 text-white! lg:text-[64px] lg:leading-20 lg:tracking-[-0.08rem]">
                   40+ Years of Independent <br className="hidden lg:flex" />{" "}
                   Active Management
                 </Typography>

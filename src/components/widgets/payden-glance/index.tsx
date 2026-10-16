@@ -9,12 +9,12 @@ const GLANCE_STATS = [
     label: "Assets under management",
   },
   {
-    icon: "/images/icon.webp",
+    icon: "/images/glance-2.webp",
     value: "400 +",
     label: "Client relationships worldwide",
   },
   {
-    icon: "/images/icon.webp",
+    icon: "/images/glance-1.webp",
     value: "100%",
     label: "Employee Owned",
   },
@@ -30,7 +30,7 @@ export default function Glance() {
         >
           <Container className="w-full flex-col gap-20">
             <Container className="flex-col items-center">
-              <Typography className="max-w-225 text-center lg:text-[48px] font-semibold text-[36px] text-white">
+              <Typography className="max-w-225 text-center lg:text-[48px] font-normal font-brandon-grotesque text-[36px] text-white">
                 Payden At A Glance
               </Typography>
               <Typography className="mt-4 lg:text-[18px] text-[18px] font-albertSans text-white">
@@ -48,7 +48,7 @@ export default function Glance() {
                     <Media src={stat.icon} alt="" width={57} height={57} />
 
                     <Container className="flex-col items-center gap-4 text-white">
-                      <Typography className="text-[36px] font-semibold lg:text-[48px]">
+                      <Typography className="text-[36px] font-normal lg:text-[48px]">
                         {stat.value}
                       </Typography>
                       <Typography className="text-[16px] font-albertSans">
