@@ -4,7 +4,7 @@ import Container from "@/components/elements/container";
 import Link from "@/components/elements/link";
 import Media from "@/components/elements/media";
 import Typography from "@/components/elements/typography";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const BAR_LINKS = [
   { label: "Distributions", href: "#", hasMenu: true },
@@ -31,6 +31,10 @@ const SHARE_CLASSES = [
   "View All Retirement Class Funds",
   "View All SI Class Funds",
 ];
+
+// Navbar height in px: mobile = h-16 (64), desktop (lg) = 12 + 19 = 7.75rem (124)
+const NAVBAR_MOBILE = 64;
+const NAVBAR_DESKTOP = 124;
 
 function Chevron({ className = "" }: { className?: string }) {
   return (
@@ -77,6 +81,37 @@ export default function FundsHero() {
   const [selectedShareClass, setSelectedShareClass] = useState(
     SHARE_CLASSES[0],
   );
+
+  // Sticky behaviour that works regardless of parent overflow / wrapper height
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  const barRef = useRef<HTMLDivElement>(null);
+  const [stuck, setStuck] = useState(false);
+  const [rowHeight, setRowHeight] = useState(0);
+
+  useEffect(() => {
+    const update = () => {
+      const sentinel = sentinelRef.current;
+      const bar = barRef.current;
+      if (!sentinel || !bar) return;
+
+      const offset = window.innerWidth >= 1024 ? NAVBAR_DESKTOP : NAVBAR_MOBILE;
+
+      // Height of the always-visible first row (excludes the expanding menus)
+      const row = bar.firstElementChild as HTMLElement | null;
+      if (row) setRowHeight(row.offsetHeight);
+
+      setStuck(sentinel.getBoundingClientRect().top <= offset);
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
 
   return (
     <>
@@ -128,9 +163,16 @@ export default function FundsHero() {
         </Container>
       </Container>
 
-      <Container
-        width="fullWidth"
-        className="sticky top-16 z-40 flex-col bg-[#0f3349] text-white lg:top-31"
+      <div ref={sentinelRef} aria-hidden className="h-0 w-full" />
+
+      {/* Keeps the page height the same while the bar is fixed */}
+      {stuck && <div aria-hidden style={{ height: rowHeight }} />}
+
+      <div
+        ref={barRef}
+        className={`z-40 flex w-full flex-col bg-[#0f3349] text-white ${
+          stuck ? "fixed inset-x-0 top-16 lg:top-31" : "relative"
+        }`}
       >
         <Container
           width="fullWidth"
@@ -328,7 +370,7 @@ export default function FundsHero() {
             ))}
           </Container>
         </Container>
-      </Container>
+      </div>
     </>
   );
 }

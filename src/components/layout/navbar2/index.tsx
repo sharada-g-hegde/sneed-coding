@@ -370,7 +370,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <Container className="sticky top-0 z-50 flex-col w-full font-sans text-white">
+    <Container className="fixed inset-x-0 top-0 z-50 w-full flex-col font-sans text-white">
       <Container
         width="fullWidth"
         className="hidden h-12 items-center justify-end gap-10 bg-[#0e2f45] px-8 lg:flex xl:px-[max(4.5vw,calc((100vw-1800px)/2))]"
