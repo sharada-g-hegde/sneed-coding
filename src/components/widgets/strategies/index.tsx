@@ -516,7 +516,7 @@ function StrategyBody({ data }: { data: Strategy }) {
         </Typography>
         <Typography className="font-albertSans lg:text-[16px] text-[16px] text-[#2F3B47]">
           {data.objective.map((p, i) => (
-            <span key={i} className="block [&:not(:last-child)]:mb-6">
+            <span key={i} className="block not-last:mb-6">
               {p}
             </span>
           ))}
@@ -546,9 +546,9 @@ function StrategyBody({ data }: { data: Strategy }) {
         <Typography className="text-[#124363] font-brandon-grotesque lg:text-[24px] text-[20px] xl:max-w-55 2xl:max-w-85">
           {data.philosophyTitle}
         </Typography>
-        <Typography className="xl:max-w-[500px] 2xl:max-w-[66%] lg:text-[16px] text-[16px] font-albertSans text-[#2F3B47]">
+        <Typography className="xl:max-w-125 2xl:max-w-[66%] lg:text-[16px] text-[16px] font-albertSans text-[#2F3B47]">
           {data.philosophy.map((p, i) => (
-            <span key={i} className="block [&:not(:last-child)]:mb-6">
+            <span key={i} className="block not-last:mb-6">
               {p}
             </span>
           ))}
@@ -558,7 +558,7 @@ function StrategyBody({ data }: { data: Strategy }) {
       <Container className="bg-gray-200 rounded-b-3xl p-6 lg:p-12">
         <Typography className="lg:text-[14px] text-[14px] font-albertSans italic text-gray-500">
           {data.risk.map((p, i) => (
-            <span key={i} className="block [&:not(:last-child)]:mb-6">
+            <span key={i} className="block not-last:mb-6">
               {p}
             </span>
           ))}
@@ -581,7 +581,7 @@ function MobileStrategyItem({
     <Container className="group flex w-full flex-col">
       <input type="checkbox" id={id} className="peer sr-only" />
 
-      <Container className="relative w-full flex-col overflow-hidden rounded-3xl border border-gray-200 group-has-[:checked]:rounded-b-none">
+      <Container className="relative w-full flex-col overflow-hidden rounded-3xl border border-gray-200 group-has-checked:rounded-b-none">
         {" "}
         <Media
           src={strategy.image}
@@ -594,11 +594,11 @@ function MobileStrategyItem({
             htmlFor={id}
             className="flex cursor-pointer items-center justify-between gap-4 p-6"
           >
-            <span className="font-brandon-grotesque text-[20px] leading-8 text-white group-has-[:checked]:text-[32px] group-has-[:checked]:leading-10">
+            <span className="font-brandon-grotesque text-[20px] leading-8 text-white group-has-checked:text-[32px] group-has-checked:leading-10">
               {strategy.title}
             </span>
             <svg
-              className="h-5 w-5 shrink-0 text-white transition-transform duration-300 group-has-[:checked]:rotate-180"
+              className="h-5 w-5 shrink-0 text-white transition-transform duration-300 group-has-checked:rotate-180"
               viewBox="0 0 20 20"
               fill="none"
               stroke="currentColor"
@@ -612,7 +612,7 @@ function MobileStrategyItem({
             </svg>
           </label>
 
-          <Container className="hidden w-full flex-col items-center px-6 pb-8 group-has-[:checked]:flex">
+          <Container className="hidden w-full flex-col items-center px-6 pb-8 group-has-checked:flex">
             <Typography className="font-albertSans mb-5 text-center text-[16px] text-white">
               {strategy.heroText}
             </Typography>
